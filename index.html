@@ -31,7 +31,7 @@
                     <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
                     <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
                     <li><a href="shop.html" title="">Tienda<div class="header__underline"></div></a></li>
-                    <li><a href="#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
+                    <li><a href="index.html#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
                 </ul>
             </nav>
             <div class="header__icons">
@@ -49,20 +49,17 @@
             <div class="hero__block">
                 <div class="hero__content">
                     <span class="hero__features">SIN GLUTEN · SIN LACTOSA · 100% NATURAL</span>
-                    <div class="hero__title">
-                        <h1>Nutrición que</h1>
-                        <span class="h1">sabe bien</span>
-                    </div>
-                    <h6>Tienda y cafetería de alimentos saludables. Postres, batidos y opciones gourmet sin gluten y sin
-                        lactosa, elaborados con ingredientes naturales.</h6>
+                    <h1>Nutrición que <span class="hero__title--alternate">sabe bien</span></h1>
+                    <p class="h6">Tienda y cafetería de alimentos saludables. Postres, batidos y opciones gourmet sin gluten y sin
+                        lactosa, elaborados con ingredientes naturales.</p>
                     <div class="hero__buttons">
                         <a href="shop.html" class="btn btn--filled" title="">Ir a la tienda</a>
                         <a href="cafeteria.html" class="btn btn--border" title="">Ver cafeteria</a>
                     </div>
                 </div>
-                <picture>
-                    <source srcset="media/store.jpg" type="image/webp">
-                    <img class="background__image" src="media/store.jpg" alt="" loading="lazy">
+                <picture class="hero__picture">
+                    <source srcset="media/store.webp" type="image/webp" id="hero__source">
+                    <img class="hero__background" id="hero__image" src="media/store.jpg" alt="" loading="lazy">
                 </picture>
             </div>
         </section>
@@ -82,12 +79,12 @@
                 </div>
                 <div class="history__image">
                     <picture>
-                        <source srcset="media/postres/ddd.jpg" type="image/webp">
-                        <img src="media/postres/ddd.jpg" alt="" loading="lazy">
+                        <source srcset="media/cake.webp" type="image/webp">
+                        <img src="media/cake.jpg" alt="" loading="lazy">
                     </picture>
                     <div class="history__info">
                         <h2>100%</h2>
-                        <h6>ingredientes naturales y libres de alérgenos</h6>
+                        <p>ingredientes naturales y libres de alérgenos</p>
                     </div>
                 </div>
             </div>
@@ -99,25 +96,25 @@
             <div class="features__block block">
                 <div class="features__card">
                     <i class="ri-bread-line"></i>
-                    <h5>Sin Gluten</h5>
+                    <h2 class="h5">Sin Gluten</h2>
                     <p>Todos nuestros productos son 100% libres de gluten, ideales para celíacos y quienes eligen una
                         dieta más limpia.</p>
                 </div>
                 <div class="features__card">
                     <i class="ri-cup-line"></i>
-                    <h5>Sin Lactosa</h5>
+                    <h2 class="h5">Sin Lactosa</h2>
                     <p>Elaboramos nuestras recetas sin lácteos, usando alternativas vegetales de la más alta calidad.
                     </p>
                 </div>
                 <div class="features__card">
                     <i class="ri-leaf-line"></i>
-                    <h5>Ingredientes Naturales.</h5>
+                    <h2 class="h5">Ingredientes Naturales.</h2>
                     <p>Solo utilizamos ingredientes frescos, orgánicos y de origen natural. Sin aditivos artificiales.
                     </p>
                 </div>
                 <div class="features__card">
                     <i class="ri-poker-hearts-line"></i>
-                    <h5>Hecho con amor.</h5>
+                    <h2 class="h5">Hecho con amor.</h2>
                     <p>Cada producto es preparado artesanalmente, con dedicación y pasión por el bienestar.</p>
                 </div>
             </div>
@@ -140,19 +137,19 @@
                                 postres artesanales sin gluten, café de especialidad y platos saludables preparados al
                                 momento. Ven, siéntate y reconecta.</p>
                             <ul class="spaces__grid">
-                                <li class="hero__features">Batidos</li>
-                                <li class="hero__features">Postres</li>
-                                <li class="hero__features">Bowls</li>
-                                <li class="hero__features">Café</li>
+                                <li class="spaces__features">Batidos</li>
+                                <li class="spaces__features">Postres</li>
+                                <li class="spaces__features">Bowls</li>
+                                <li class="spaces__features">Café</li>
                             </ul>
-                            <a href="tienda.html" class="btn btn--filled" title="">Ver menú completo<i
+                            <a href="cafeteria.html" class="btn btn--filled" title="">Ver menú completo<i
                                     class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
-                            <source srcset="media/postres/505471382_18286593580301948_9206638812884285647_n..jpg"
+                            <source srcset="media/cuchareables.webp"
                                 type="image/webp">
-                            <img class="background__image"
-                                src="media/postres/505471382_18286593580301948_9206638812884285647_n..jpg" alt=""
+                            <img class="spaces__background"
+                                src="media/cuchareables.jpg" alt=""
                                 loading=" lazy">
                         </picture>
                     </div>
@@ -166,20 +163,20 @@
                                 que
                                 comer bien sea parte de tu día a día.</p>
                             <ul class="spaces__grid">
-                                <li class="hero__features">Granolas</li>
-                                <li class="hero__features">Superfoods</li>
-                                <li class="hero__features">Reposteria</li>
-                                <li class="hero__features">Despensa</li>
+                                <li class="spaces__features">Granolas</li>
+                                <li class="spaces__features">Superfoods</li>
+                                <li class="spaces__features">Reposteria</li>
+                                <li class="spaces__features">Despensa</li>
                             </ul>
-                            <a href="tienda.html" class="btn btn--filled" title="">Ver productos<i
+                            <a href="shop.html" class="btn btn--filled" title="">Ver productos<i
                                     class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
                             <source
-                                srcset="media/media/Si te gusta el buen pan, este sí o sí tienes que probarlo- pan de poro lleno de sabor, focaccia .jpg"
+                                srcset="media/bread.webp"
                                 type="image/webp">
-                            <img class="background__image"
-                                src="media/Si te gusta el buen pan, este sí o sí tienes que probarlo- pan de poro lleno de sabor, focaccia .jpg"
+                            <img class="spaces__background"
+                                src="media/bread.jpg"
                                 alt="" loading=" lazy">
                         </picture>
                     </div>
@@ -191,13 +188,16 @@
         <!-- Clients -->
         <section class="clients section">
             <div class="clients__block block">
-                <h2 class="h6">LO QUE DICEN NUESTROS CLIENTES</h2>
+                <h2 class="p">LO QUE DICEN NUESTROS CLIENTES</h2>
                 <h3 class="h2">Historias reales</h3>
                 <div class="clients__cards">
                     <div class="clients__card">
                         <div class="clients__stars">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
                         </div>
                         <p class="clients__review">"Finalmente encontré un lugar donde puedo comer postres sin
                             preocuparme. El brownie sin gluten es increíblemente rico, ¡lo pido siempre!"</p>
@@ -208,8 +208,11 @@
                     </div>
                     <div class="clients__card">
                         <div class="clients__stars">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
                         </div>
                         <p class="clients__review">"Los batidos son una locura. El Green Power se convirtió en mi ritual
                             de las mañanas. El ambiente del local es hermoso y acogedor."</p>
@@ -220,8 +223,11 @@
                     </div>
                     <div class="clients__card">
                         <div class="clients__stars">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                                class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
                         </div>
                         <p class="clients__review">"Como intolerante a la lactosa siempre me quedaba sin opciones en
                             cafeterías. Inverna cambió eso completamente. ¡Altamente recomendado!"</p>
@@ -242,26 +248,40 @@
                     <h2 class="p">CONTACTO</h2>
                     <h3 class="h2">Estamos para ayudarte</h3>
                     <p>¿Tienes dudas sobre ingredientes, pedidos especiales o quieres visitarnos? Escríbenos.</p>
+                    <a class="contact__link" href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="">
+                        <i class="ri-whatsapp-line contact__link__icon"></i>
+                        <div>
+                            <p class="contact__link__text">Whatsapp</p>
+                            <p>+51 952 887 408</p>
+                        </div>
+                    </a>
+                    <a class="contact__link" href="mailto:contacto@inverna.com" target="_blank" title="">
+                        <i class="ri-mail-line contact__link__icon"></i>
+                        <div>
+                            <p class="contact__link__text">Email</p>
+                            <p>contacto@inverna.com</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="contact__content">
                     <h4>Envíanos un mensaje</h4>
                     <form class="contact__form" action="#" method="GET">
                         <div class="contact__form-field">
-                            <label for="name">Nombre:</label>
+                            <label class="contact__form__label" for="name">Nombre:</label>
                             <input id="name" type="text" placeholder="Tu nombre" name="name">
                         </div>
                         <div class="contact__form-field">
-                            <label for="email">Email:</label>
+                            <label class="contact__form__label" for="email">Email:</label>
                             <input id="email" type="email" placeholder="tu@email.com" name="email">
                         </div>
                         <div class="contact__form-field">
-                            <label for="message">Message:</label>
-                            <input id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message">
+                            <label class="contact__form__label" for="message">Mensaje:</label>
+                            <textarea class="contact__form__message"id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message"></textarea>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form-acceptance">
                                 <input type="checkbox" name="acceptance">
-                                <span>He leído y acepto la </span><a href="#" title="">política de privacidad</a>
+                                <span>He leído y acepto la <a href="#" title="">política de privacidad</a></span>
                             </label>
                         </div>
                         <button type="submit">Enviar mensaje</button>
@@ -274,43 +294,55 @@
         <!-- Visit -->
         <section class="visit section" id="visit-us">
             <div class="visit__block block">
-                <div>
+                <div class="visit__title">
                     <i class="ri-map-pin-line"></i>
                     <h3>Visítanos en</h3>
                 </div>
                 <div class="visit__cards">
                     <div class="visit__card">
-                        <!-- <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3949.926965568875!2d-79.0288834!3d-8.1089193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3db53ce425d3%3A0x7c4ff7b00075ec1a!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054965451!5m2!1ses-419!2spe"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                        <div>
-                            <div>
-                                <i class="ri-map-pin-line"></i>
+                        <iframe class="visit__map"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3949.926965568875!2d-79.0288834!3d-8.1089193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3db53ce425d3%3A0x7c4ff7b00075ec1a!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054965451!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="visit__text">
+                            <div class="visit__text__detail">
+                                <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
-                                    <p>Centro Histórico</p>
-                                    <p>Jirón Junín 444</p>
+                                    <p class="h5">Centro Histórico</p>
+                                    <p class="link">Jirón Junín 444</p>
                                 </div>
                             </div>
-                            <p>Lun – Sab: 9:30 am – 8:00 pm</p>
-                            <p>+51 952 887 408</p>
+                            <div class="visit__text__detail">
+                                <i class="ri-time-line"></i>
+                                <p class="link">Lun – Sab: 9:30 am – 8:00 pm</p>
+                            </div>
+                            <div class="visit__text__detail">
+                                <i class="ri-phone-line"></i>
+                                <a href="tel:+51 952887408">+51 952 887 408</a>
+                            </div>
                         </div>
                     </div>
                     <div class="visit__card">
-                        <!-- <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.3867213154035!2d-79.034795!3d-8.132667499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d0078ff7bd9%3A0xc3c20805b4bcc4d!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054804570!5m2!1ses-419!2spe"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                        <div>
-                            <div>
-                                <i class="ri-map-pin-line"></i>
+                        <iframe class="visit__map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.3867213154035!2d-79.034795!3d-8.132667499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d0078ff7bd9%3A0xc3c20805b4bcc4d!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054804570!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="visit__text">
+                            <div class="visit__text__detail">
+                                <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
-                                    <p>Las Praderas del Golf</p>
-                                    <p>Av. Prol. Cesar Vallejo D54</p>
+                                    <p class="h5">Las Praderas del Golf</p>
+                                    <p class="link">Av. Prol. Cesar Vallejo D54</p>
                                 </div>
                             </div>
-                            <p>Lun – Sab: 9:30 am – 9:00 pm</p>
-                            <p>+51 952 887 408</p>
+                            <div class="visit__text__detail">
+                                <i class="ri-time-line"></i>
+                                <p class="link">Lun – Sab: 9:30 am – 9:00 pm</p>
+                            </div>
+                            <div class="visit__text__detail">
+                                <i class="ri-phone-line"></i>
+                                <a href="tel:+51 992842415">+51 992 842 415</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -326,24 +358,27 @@
 
     <footer class="footer" id="footer">
         <div class="footer__block block">
-            <div class="footer__logo">
-                <picture>
-                    <img src="media/logo.jpg" alt="" loading="lazy">
-                </picture>
+            <div class="footer__container">
+                <div class="footer__logo">
+                    <picture>
+                        <img class="footer__img" src="media/logo.jpg" alt="" loading="lazy">
+                    </picture>
+                    <span>iverna</span>
+                </div>
                 <ul class="footer__social">
-                    <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
-                    <li><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
+                    <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line footer__icon"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line footer__icon"></i></a></li>
+                    <li><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line footer__icon"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line footer__icon"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">
-                <li><a href="#" title="">Legal Notice</a></li>
-                <li><a href="#" title="">Privacy Policy</a></li>
-                <li><a href="#" title="">Cookies Policy</a></li>
+                <li><a href="#" title="">Términos y Condiciones</a></li>
+                <li><a href="#" title="">Prolítica de Privacidad</a></li>
+                <li><a href="#" title="">Política de Cookies</a></li>
             </ul>
+            <p class="footer__copyright">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
         </div>
     </footer>
 </body>
-
 </html>
