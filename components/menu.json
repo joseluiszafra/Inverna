@@ -1,0 +1,36 @@
+[
+    {
+        "category": "Batidos & Jugos",
+        "items": [
+            {
+                "title": "Green Power",
+                "feature": "Vegano",
+                "price": "6,50 €",
+                "description": "Espinaca, manzana, jengibre, limón, almendras"
+            },
+            {
+                "title": "Berry Burst",
+                "feature": "Sin lactosa",
+                "price": "7,00 €",
+                "description": "Frutillas, arándanos, frambuesas, banana, avena"
+            }
+        ]
+    },
+    {
+        "category": "Postres & Dulces",
+        "items": [
+            {
+                "title": "Brownie de Chocolate",
+                "feature": "Sin gluten",
+                "price": "4,50 €",
+                "description": "Sin gluten, base de nueces y cacao orgánico"
+            },
+            {
+                "title": "Tarta de Frutos Rojos",
+                "feature": "Sin lactosa",
+                "price": "5,50 €",
+                "description": "Masa de almendras, crema de coco, berries frescos"
+            }
+        ]
+    }
+]

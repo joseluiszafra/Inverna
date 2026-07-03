@@ -4,29 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inverna</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css" rel="stylesheet">
+    <!-- Primary Meta Tags -->
+    <title>Inverna - biotienda</title>
+    <meta name="title" content="Inverna - biotienda | cafetería" />
+    <meta name="description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://joseluiszafra.github.io/Inverna/" />
+    <meta property="og:title" content="Inverna - biotienda | cafetería" />
+    <meta property="og:description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <meta property="og:image" content="media/logo-alt.webp" />
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://joseluiszafra.github.io/Inverna/" />
+    <meta property="twitter:title" content="Inverna - biotienda | cafetería" />
+    <meta property="twitter:description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <meta property="twitter:image" content="media/logo-alt.webp" />
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <link rel="icon" type="image/x-icon" href="media/logo-light-circular.png" >
     <script src="js/index.js" defer></script>
 </head>
 
 <body>
-    <header class="header header-hero" id="header">
+    <header class="header header--hero" id="header">
         <div class="header__block block">
-            <a href="index.html" class="header__logo">
+            <a href="index.html" class="header__logo" title="">
                 <picture>
-                    <img src="media/logo-light.jpg" class="header__logo__img" alt="" loading="lazy">
+                    <source srcset="media/logo-light-circular.webp" type="image/webp">
+                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
                 </picture>
-                <span>inverna</span>
+                <p class="h5">inverna</p>
             </a>
-            <nav id="nav" class="header__nav no-mobile">
-                <button id="menu-close" class="no-desktop"><i
-                        class="ri-close-large-line header__menu--mobile"></i></button>
+            <nav id="nav" class="header__nav no-mobile " >
                 <ul class="header__ul">
                     <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
                     <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
@@ -35,10 +49,16 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="shopping-cart"><i class="ri-shopping-cart-line"></i>
+                <button id="cart-open" title="">
+                    <i class="ri-shopping-cart-line"></i>
+                    <span class="header__circle"></span>
+                    <span class="header__cart__count" id="header__cart__count"></span>
+                </button>
+                <button id="menu-toggle" class="no-desktop" title="">
+                    <i class="ri-menu-fill header__menu--mobile"></i>
+                    <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
                 </button>
-                <button id="menu-toggle" class="no-desktop"><i class="ri-menu-fill header__menu--mobile"></i></button>
             </div>
         </div>
     </header>
@@ -49,7 +69,7 @@
             <div class="hero__block">
                 <div class="hero__content">
                     <span class="hero__features">SIN GLUTEN · SIN LACTOSA · 100% NATURAL</span>
-                    <h1>Nutrición que <span class="hero__title--alternate">sabe bien</span></h1>
+                    <h1>Nutrición que <span class="hero__title--green">sabe bien</span></h1>
                     <p class="h6">Tienda y cafetería de alimentos saludables. Postres, batidos y opciones gourmet sin gluten y sin
                         lactosa, elaborados con ingredientes naturales.</p>
                     <div class="hero__buttons">
@@ -57,9 +77,9 @@
                         <a href="cafeteria.html" class="btn btn--border" title="">Ver cafeteria</a>
                     </div>
                 </div>
-                <picture class="hero__picture">
+                <picture>
                     <source srcset="media/store.webp" type="image/webp" id="hero__source">
-                    <img class="hero__background" id="hero__image" src="media/store.jpg" alt="" loading="lazy">
+                    <img class="hero__background" id="hero__image" src="media/store.jpg" alt="store" loading="lazy">
                 </picture>
             </div>
         </section>
@@ -69,7 +89,7 @@
         <section class="history section">
             <div class="history__block block">
                 <div class="history__text">
-                    <h2 class="p">NUESTRA HISTORIA</h2>
+                    <h2 class="eyebrow--text">NUESTRA HISTORIA</h2>
                     <h3 class="h2">Comer bien no debería ser difícil</h3>
                     <p>En Inverna creemos que una alimentación saludable puede ser deliciosa, accesible y
                         celebrada. Nació de la necesidad de ofrecer opciones reales para personas con intolerancias,
@@ -80,7 +100,7 @@
                 <div class="history__image">
                     <picture>
                         <source srcset="media/cake.webp" type="image/webp">
-                        <img src="media/cake.jpg" alt="" loading="lazy">
+                        <img src="media/cake.jpg" alt="cake" loading="lazy">
                     </picture>
                     <div class="history__info">
                         <h2>100%</h2>
@@ -124,7 +144,7 @@
         <!-- Spaces -->
         <section class="spaces section">
             <div class="spaces__block block">
-                <h2 class="p">DOS FORMAS DE DISFRUTAR INVERNA</h2>
+                <h2 class="eyebrow--text">DOS FORMAS DE DISFRUTAR INVERNA</h2>
                 <h3 class="h2">Nuestros espacios</h3 class="h2">
                 <p class="spaces__description">Ya sea que quieras sentarte a disfrutar o llevar lo mejor a tu hogar,
                     tenemos un espacio para ti.</p>
@@ -149,7 +169,7 @@
                             <source srcset="media/cuchareables.webp"
                                 type="image/webp">
                             <img class="spaces__background"
-                                src="media/cuchareables.jpg" alt=""
+                                src="media/cuchareables.jpg" alt="small cake"
                                 loading=" lazy">
                         </picture>
                     </div>
@@ -168,16 +188,11 @@
                                 <li class="spaces__features">Reposteria</li>
                                 <li class="spaces__features">Despensa</li>
                             </ul>
-                            <a href="shop.html" class="btn btn--filled" title="">Ver productos<i
-                                    class="ri-arrow-right-long-line"></i></a>
+                            <a href="shop.html" class="btn btn--filled" title="">Ver productos<i class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
-                            <source
-                                srcset="media/bread.webp"
-                                type="image/webp">
-                            <img class="spaces__background"
-                                src="media/bread.jpg"
-                                alt="" loading=" lazy">
+                            <source srcset="media/bread.webp" type="image/webp">
+                            <img class="spaces__background" src="media/bread.jpg" alt="bread" loading=" lazy">
                         </picture>
                     </div>
                 </div>
@@ -188,7 +203,7 @@
         <!-- Clients -->
         <section class="clients section">
             <div class="clients__block block">
-                <h2 class="p">LO QUE DICEN NUESTROS CLIENTES</h2>
+                <h2 class="eyebrow--text">LO QUE DICEN NUESTROS CLIENTES</h2>
                 <h3 class="h2">Historias reales</h3>
                 <div class="clients__cards">
                     <div class="clients__card">
@@ -245,46 +260,46 @@
         <section class="contact section">
             <div class="contact__block block">
                 <div class="contact__text">
-                    <h2 class="p">CONTACTO</h2>
+                    <h2 class="eyebrow--text">CONTACTO</h2>
                     <h3 class="h2">Estamos para ayudarte</h3>
                     <p>¿Tienes dudas sobre ingredientes, pedidos especiales o quieres visitarnos? Escríbenos.</p>
-                    <a class="contact__link" href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="">
+                    <div class="contact__link">
                         <i class="ri-whatsapp-line contact__link__icon"></i>
                         <div>
                             <p class="contact__link__text">Whatsapp</p>
-                            <p>+51 952 887 408</p>
+                            <a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="">+51 952 887 408</a>
                         </div>
-                    </a>
-                    <a class="contact__link" href="mailto:contacto@inverna.com" target="_blank" title="">
+                    </div>
+                    <div class="contact__link">
                         <i class="ri-mail-line contact__link__icon"></i>
                         <div>
                             <p class="contact__link__text">Email</p>
-                            <p>contacto@inverna.com</p>
+                            <a href="mailto:contacto@inverna.com" target="_blank" title="">contacto@inverna.com</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="contact__content">
-                    <h4>Envíanos un mensaje</h4>
+                    <h2 class="h4">Envíanos un mensaje</h2>
                     <form class="contact__form" action="#" method="GET">
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="name">Nombre:</label>
-                            <input id="name" type="text" placeholder="Tu nombre" name="name">
+                            <input id="name" type="text" placeholder="Tu nombre" name="name" required>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="email">Email:</label>
-                            <input id="email" type="email" placeholder="tu@email.com" name="email">
+                            <input id="email" type="email" placeholder="tu@email.com" name="email" required>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="message">Mensaje:</label>
-                            <textarea class="contact__form__message"id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message"></textarea>
+                            <textarea class="contact__form__message"id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message" required></textarea>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form-acceptance">
-                                <input type="checkbox" name="acceptance">
+                                <input type="checkbox" name="acceptance" required>
                                 <span>He leído y acepto la <a href="#" title="">política de privacidad</a></span>
                             </label>
                         </div>
-                        <button type="submit">Enviar mensaje</button>
+                        <button type="submit" title="">Enviar mensaje</button>
                     </form>
                 </div>
             </div>
@@ -296,7 +311,7 @@
             <div class="visit__block block">
                 <div class="visit__title">
                     <i class="ri-map-pin-line"></i>
-                    <h3>Visítanos en</h3>
+                    <h2 class="h3">Visítanos en</h2>
                 </div>
                 <div class="visit__cards">
                     <div class="visit__card">
@@ -308,7 +323,7 @@
                             <div class="visit__text__detail">
                                 <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
-                                    <p class="h5">Centro Histórico</p>
+                                    <h3 class="h5">Centro Histórico</h3>
                                     <p class="link">Jirón Junín 444</p>
                                 </div>
                             </div>
@@ -318,7 +333,7 @@
                             </div>
                             <div class="visit__text__detail">
                                 <i class="ri-phone-line"></i>
-                                <a href="tel:+51 952887408">+51 952 887 408</a>
+                                <a href="tel:+51 952887408" title="">+51 952 887 408</a>
                             </div>
                         </div>
                     </div>
@@ -331,7 +346,7 @@
                             <div class="visit__text__detail">
                                 <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
-                                    <p class="h5">Las Praderas del Golf</p>
+                                    <h3 class="h5">Las Praderas del Golf</h3>
                                     <p class="link">Av. Prol. Cesar Vallejo D54</p>
                                 </div>
                             </div>
@@ -341,7 +356,7 @@
                             </div>
                             <div class="visit__text__detail">
                                 <i class="ri-phone-line"></i>
-                                <a href="tel:+51 992842415">+51 992 842 415</a>
+                                <a href="tel:+51 992842415" title="">+51 992 842 415</a>
                             </div>
                         </div>
                     </div>
@@ -350,20 +365,28 @@
         </section>
         <!-- Visit -->
 
-        <section class="scroller">
-            <a id="scroller" href="#" class="scroller__block scroller-hero"><i class="ri-arrow-up-line"></i></a>
+        <!-- Shopping Cart -->
+        <section class="cart" id="cart">  
         </section>
+        <!-- Shopping Cart -->
 
+        <!-- Scroller -->
+        <div class="scroller">
+            <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
+        </div>
+        <!-- Scroller -->
+        
     </main>
 
-    <footer class="footer" id="footer">
+    <footer class="footer">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
                     <picture>
-                        <img class="footer__img" src="media/logo.jpg" alt="" loading="lazy">
+                        <source srcset="media/logo-circular.webp" type="image/webp">
+                        <img class="footer__img" src="media/logo-circular.png" alt="logo" loading="lazy">
                     </picture>
-                    <span>iverna</span>
+                    <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
                     <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line footer__icon"></i></a></li>

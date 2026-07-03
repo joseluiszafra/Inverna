@@ -4,29 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inverna</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css" rel="stylesheet">
+    <!-- Primary Meta Tags -->
+    <title>Inverna - biotienda</title>
+    <meta name="title" content="Inverna - biotienda | cafetería" />
+    <meta name="description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://joseluiszafra.github.io/Inverna/" />
+    <meta property="og:title" content="Inverna - biotienda | cafetería" />
+    <meta property="og:description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <meta property="og:image" content="media/logo-alt.webp" />
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://joseluiszafra.github.io/Inverna/" />
+    <meta property="twitter:title" content="Inverna - biotienda | cafetería" />
+    <meta property="twitter:description" content="Más que una tienda, somos una comunidad comprometida con el consumo responsable, la sustentabilidad y la vida saludable. Súmate a esta comunidad." />
+    <meta property="twitter:image" content="media/logo-alt.webp" />
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <link rel="icon" type="image/x-icon" href="media/logo-light-circular.png" >
     <script src="js/index.js" defer></script>
 </head>
 
 <body>
-    <header class="header header-hero" id="header">
+    <header class="header header--hero" id="header">
         <div class="header__block block">
-            <a href="index.html" class="header__logo">
+            <a href="index.html" class="header__logo" title="">
                 <picture>
-                    <img src="media/logo-light.jpg" class="header__logo__img" alt="" loading="lazy">
+                    <source srcset="media/logo-light-circular.webp" type="image/webp">
+                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
                 </picture>
-                <span>inverna</span>
+                <p class="h5">inverna</p>
             </a>
-            <nav id="nav" class="header__nav no-mobile">
-                <button id="menu-close" class="no-desktop"><i
-                        class="ri-close-large-line header__menu--mobile"></i></button>
+            <nav id="nav" class="header__nav no-mobile " >
                 <ul class="header__ul">
                     <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
                     <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
@@ -35,22 +49,93 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="shopping-cart"><i class="ri-shopping-cart-line"></i>
+                <button id="cart-open" title="">
+                    <i class="ri-shopping-cart-line"></i>
+                    <span class="header__circle"></span>
+                    <span class="header__cart__count" id="header__cart__count"></span>
+                </button>
+                <button id="menu-toggle" class="no-desktop" title="">
+                    <i class="ri-menu-fill header__menu--mobile"></i>
+                    <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
                 </button>
-                <button id="menu-toggle" class="no-desktop"><i class="ri-menu-fill header__menu--mobile"></i></button>
             </div>
-        </div>
     </header>
 
-<footer class="footer" id="footer">
+    <main>
+        <!-- Hero -->
+        <section class="hero--alternate section">
+            <div class="hero__block--alternate block">
+                <h1 class="eyebrow--text">Productos</h1>
+                <div class="hero__title--alternate">
+                    <h2>Nuestra Tienda</h2>
+                    <p>Llevate lo mejor de Inverna a tu hogar. Productos naturales, artesanales y libres de alérgenos.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Hero -->
+
+        <!-- shop -->
+        <section class="shop section">
+            <div class="shop__block block">
+                <div class="shop__filter">
+                    <button class="btn btn__filter btn--green" id="btn__all">Todo</button>
+                    <button class="btn btn__filter btn--yellow" id="btn__breakfast">Desayunos</button>
+                    <button class="btn btn__filter btn--yellow" id="btn__snacks">Snacks</button>
+                    <button class="btn btn__filter btn--yellow" id="btn__superfoods">Superfoods</button>
+                    <button class="btn btn__filter btn--yellow" id="btn__baking">Reposteria</button>
+                    <button class="btn btn__filter btn--yellow" id="btn__pantry">Despensa</button>
+                </div>
+                <ul class="shop__container">
+                    <li class="shop__item">
+                        <div class="shop__img">
+                            <picture>
+                                <source srcset="media/store.webp" type="image/webp">
+                                <img class="shop__background" src="media/store.jpg" alt="store" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="shop__info">
+                            <div>
+                                <h4>Granola Artesanal</h4>
+                                <p>350 g</p>
+                            </div>
+                            <p>Granola tostada con avena, semillas, frutos secos y miel de abejas. Sin azúcar refinada.</p>
+                            <div class="shop__features">
+                                <p class="shop__feature gluten">Sin gluten</p>
+                                <p class="shop__feature lactose">Sin lactosa</p>
+                            </div>
+                            <div>
+                                <h4>8,90 €</h4>
+                                <button class="btn btn--green"><i class="ri-add-line"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- shop -->
+
+        <!-- Shopping Cart -->
+        <section class="cart" id="cart">  
+        </section>
+        <!-- Shopping Cart -->
+
+        <!-- Scroller -->
+        <div class="scroller">
+            <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
+        </div>
+        <!-- Scroller -->
+    </main>
+
+    <footer class="footer">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
                     <picture>
-                        <img class="footer__img" src="media/logo.jpg" alt="" loading="lazy">
+                        <source srcset="media/logo-circular.webp" type="image/webp">
+                        <img class="footer__img" src="media/logo-circular.png" alt="logo" loading="lazy">
                     </picture>
-                    <span>iverna</span>
+                    <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
                     <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line footer__icon"></i></a></li>
