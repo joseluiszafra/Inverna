@@ -1,0 +1,459 @@
+[
+    {
+    "id": 1,
+    "name": "Granola Artesanal",
+    "category": "Desayunos",
+    "desc": "Granola tostada con avena, semillas, frutos secos y miel de abejas. Sin azúcar refinada.",
+    "detail": "Elaborada en pequeños lotes con avena integral tostada lentamente al horno. Combinamos semillas de chía, linaza y girasol con frutos secos seleccionados y una pizca de canela. Endulzada únicamente con miel de abejas pura, sin azúcares añadidos ni conservantes.",
+    "ingredients": "Avena integral, almendras, nueces, semillas de chía, linaza, girasol, miel de abejas, aceite de coco, canela, sal de mar.",
+    "benefits": [
+            "Alta en fibra",
+            "Energía sostenida",
+            "Rica en omega-3"
+        ],
+    "price": 8.90,
+    "unit": "350 g",
+    "tags": [
+            "Sin gluten",
+            "Sin lactosa"
+        ],
+    "features": [
+            "gluten",
+            "lactose"
+        ],
+    "img": "granola-artesanal"
+    },
+    {
+    "id": 2,
+    "name": "Mix de Semillas",
+    "category": "Superfoods",
+    "desc": "Chía, linaza, girasol y zapallo. Ricas en omega-3 y proteínas vegetales.",
+    "detail": "Una mezcla cuidadosamente balanceada de cuatro semillas de alto valor nutricional. Perfectas para agregar a smoothies, yogures, ensaladas o sopas. Prensadas en frío para preservar todos sus nutrientes esenciales.",
+    "ingredients": "Semillas de chía, linaza dorada, girasol, zapallo. Sin aditivos.",
+    "benefits": [
+            "Omega-3 y omega-6",
+            "Proteína vegetal",
+            "Sin procesar"
+        ],
+    "price": 5.90,
+    "unit": "250 g",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "mix-semillas"
+    },
+    {
+    "id": 3,
+    "name": "Barra Energética",
+    "category": "Snacks",
+    "desc": "Dátiles, cacao, nueces y avena. Endulzada solo con frutas.",
+    "detail": "La alternativa perfecta a las barras industriales. Preparadas artesanalmente con dátiles Medjool como base natural de dulzura, combinados con cacao crudo orgánico y una mezcla de frutos secos. Sin hornear, para preservar enzimas y nutrientes.",
+    "ingredients": "Dátiles Medjool, nueces, almendras, cacao crudo, avena certificada sin gluten, coco rallado, vainilla natural.",
+    "benefits": [
+            "Sin azúcar añadida",
+            "Energía inmediata",
+            "Sin hornear"
+        ],
+    "price": 2.90,
+    "unit": "c/u",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "barra"
+    },
+    {
+    "id": 4,
+    "name": "Harina de Almendras",
+    "category": "Repostería",
+    "desc": "Harina finamente molida, ideal para repostería sin gluten. Apto para dietas keto.",
+    "detail": "Elaborada a partir de almendras blanqueadas y molidas finamente hasta lograr una textura perfecta para repostería. Sustituye la harina de trigo en una proporción 1:1 en la mayoría de recetas. Ideal para bizcochos, galletas, bases de tartas y panes.",
+    "ingredients": "100% almendras blanqueadas molidas. Sin aditivos, sin conservantes.",
+    "benefits": [
+            "Baja en carbohidratos",
+            "Alta en proteína",
+            "Apta para keto"
+        ],
+    "price": 11.90,
+    "unit": "500 g",
+    "tags": [
+            "Sin gluten",
+            "Keto"
+        ],
+    "features": [
+            "gluten",
+            "keto"
+        ],
+    "img": "harina-de-almendras"
+    },
+    {
+    "id": 5,
+    "name": "Legumbres Multicolor",
+    "category": "Despensa",
+    "desc": "Mix de lentejas, garbanzos y porotos. Proteína vegetal de alta calidad.",
+    "detail": "Una despensa de proteína vegetal completa. Combinamos lentejas rojas y verdes, garbanzos y porotos negros en una mezcla que puede cocinarse junta o por separado. Cultivadas sin pesticidas, de origen local.",
+    "ingredients": "Lentejas rojas, lentejas verdes, garbanzos, porotos negros. Sin aditivos.",
+    "benefits": [
+            "Proteína completa",
+            "Alta en hierro",
+            "Sin pesticidas"
+        ],
+    "price": 4.90,
+    "unit": "500 g",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "legumbres"
+    },
+    {
+    "id": 6,
+    "name": "Aceite de Oliva Extra Virgen",
+    "category": "Despensa",
+    "desc": "Primera prensada en frío. Ideal para condimentar y cocinar a baja temperatura.",
+    "detail": "Aceite obtenido por extracción mecánica en frío, lo que preserva todos sus polifenoles, antioxidantes y el sabor característico afrutado. Ideal para aderezar ensaladas, dips, tostadas o cocinar a temperaturas moderadas. Acidez inferior al 0,3%.",
+    "ingredients": "100% aceitunas seleccionadas, primera prensada en frío. Acidez: 0,28%.",
+    "benefits": [
+            "Polifenoles naturales",
+            "Alta en omega-9",
+            "Primera prensada"
+        ],
+    "price": 14.90,
+    "unit": "500 ml",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "olive-oil"
+    },
+    {
+    "id": 7,
+    "name": "Crema de Maní Natural",
+    "category": "Desayunos",
+    "desc": "100% maní tostado, sin aceites añadidos ni conservantes. Proteína pura.",
+    "detail": "Solo maní. Tostado a la temperatura perfecta y molido hasta lograr la consistencia cremosa ideal. Sin aceite de palma, sin azúcar, sin sal añadida. Una cucharada aporta 7g de proteína pura. Puede separarse el aceite natural —solo revuelve.",
+    "ingredients": "100% maní tostado. Sin aditivos, sin conservantes, sin aceites añadidos.",
+    "benefits": [
+            "7g proteína por porción",
+            "Sin aceite de palma",
+            "Sin azúcar"
+        ],
+    "price": 7.90,
+    "unit": "350 g",
+    "tags": [
+            "Vegano",
+            "Sin lactosa"
+        ],
+    "features": [
+            "vegan",
+            "lactose"
+        ],
+    "img": "mani"
+    },
+    {
+    "id": 8,
+    "name": "Conservas Naturales",
+    "category": "Despensa",
+    "desc": "Conservas artesanales sin conservantes artificiales. Preparadas con ingredientes frescos.",
+    "detail": "Preparadas en pequeños lotes con frutas y verduras de estación seleccionadas. El proceso de conservación es 100% natural, usando solo el poder del vinagre, la sal de mar y el calor. Sin BPA en el envase.",
+    "ingredients": "Vegetales de temporada, vinagre de manzana, sal de mar, especias naturales. Sin conservantes artificiales.",
+    "benefits": [
+            "Sin conservantes",
+            "Envase sin BPA",
+            "Producción local"
+        ],
+    "price": 6.90,
+    "unit": "300 g",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+        
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "conservas"
+    },
+    {
+    "id": 9,
+    "name": "Proteína Vegetal",
+    "category": "Superfoods",
+    "desc": "Base de guisante y arroz. 25g de proteína por porción, sin sabores artificiales.",
+    "detail": "Fórmula de proteína de origen 100% vegetal que combina proteína de guisante amarillo y proteína de arroz integral para lograr un perfil completo de aminoácidos. Sin edulcorantes artificiales. Disponible en sabor natural (neutro), ideal para mezclar con batidos, leches vegetales o recetas.",
+    "ingredients": "Proteína aislada de guisante, proteína de arroz integral, lecitina de girasol, vainilla natural. Sin stevia ni sucralosa.",
+    "benefits": [
+            "25g proteína/porción",
+            "Aminoácidos completos",
+            "Sin edulcorantes"
+        ],
+    "price": 29.90,
+    "unit": "500 g",
+    "tags": [
+            "Vegano",
+            "Sin gluten"
+        ],
+    "features": [
+            "vegan",
+            "gluten"
+        ],
+    "img": "proteina"
+    },
+    {
+    "id": 10,
+    "name": "Té Matcha Orgánico en Polvo",
+    "category": "Superfoods",
+    "desc": "Grado ceremonial japonés de cultivo ecológico. Energía limpia y antioxidantes concentrados.",
+    "detail": "Hojas de té verde finamente molidas a la piedra, cultivadas a la sombra en Uji, Japón, para potenciar su contenido de clorofila y L-teanina. Proporciona un estado de alerta calma sin los picos de ansiedad del café. Perfecto para lattes o repostería saludable.",
+    "ingredients": "100% Hojas de té verde matcha de cultivo ecológico certificado.",
+    "benefits": [
+      "Grado ceremonial",
+      "Energía sostenida",
+      "Antioxidante natural"
+    ],
+    "price": 18.50,
+    "unit": "80 g",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "te-matcha"
+  },
+  {
+    "id": 11,
+    "name": "Chips de Kale Horneados",
+    "category": "Snacks",
+    "desc": "Hojas de kale crujientes horneadas a baja temperatura con levadura nutricional y levante toque de sal.",
+    "detail": "El snack saludable perfecto para calmar el antojo de algo salado y crujiente. Deshidratadas lentamente para conservar todas las vitaminas, calcio y hierro del kale fresco. Tienen un delicioso e intenso sabor a queso gracias a la levadura nutricional, pero son 100% libres de lácteos.",
+    "ingredients": "Hojas de kale frescas, levadura nutricional, aceite de oliva virgen extra, ajo en polvo, sal marina.",
+    "benefits": [
+      "Bajo en calorías",
+      "Rico en hierro y calcio",
+      "Sabor a queso sin lácteos"
+    ],
+    "price": 3.50,
+    "unit": "45 g",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "baked-kale-chips"
+  },
+  {
+    "id": 12,
+    "name": "Barritas Energéticas de Dátil y Coco",
+    "category": "Snacks",
+    "desc": "Base de dátiles y frutos secos con coco rallado. Sin azúcares añadidos ni jarabes.",
+    "detail": "Energía natural y compacta para llevar a donde quieras. Elaboradas en frío presionando dátiles jugosos con almendras y coco de cultivo sostenible. Al no llevar cocción, mantienen intactos sus nutrientes y fibra. Ideales para antes de entrenar o entre comidas.",
+    "ingredients": "Dátiles deshuesados, almendras crudas, coco rallado deshidratado, esencia natural de vainilla.",
+    "benefits": [
+      "Sin azúcares añadidos",
+      "Energía 100% natural",
+      "Procesadas en frío"
+    ],
+    "price": 4.90,
+    "unit": "4 x 40 g",
+    "tags": [
+      "Vegano",
+      "Sin lactosa"
+    ],
+    "features": [
+      "vegan",
+      "lactose"
+    ],
+    "img": "Larabas-de-coco"
+  },
+  {
+    "id": 13,
+    "name": "Garbanzos Crujientes al Pimentón",
+    "category": "Snacks",
+    "desc": "Garbanzos sazonados con pimentón ahumado y horneados hasta quedar súper crujientes.",
+    "detail": "Una alternativa proteica, saludable y saciante a las patatas fritas tradicionales. Seleccionamos garbanzos cocidos en su punto, los sazonamos con especias naturales y pimentón de la Vera, y los horneamos sin exceso de grasa para lograr una textura irresistible.",
+    "ingredients": "Garbanzos enteros cocidos, aceite de girasol alto oleico, pimentón ahumado dulce, comino molido, sal de mar.",
+    "benefits": [
+      "Alto contenido en fibra",
+      "Proteína vegetal portátil",
+      "Horneados, no fritos"
+    ],
+    "price": 3.20,
+    "unit": "120 g",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "garbanzos-crujientes"
+  },
+  {
+    "id": 14,
+    "name": "Eritritol Orgánico en Polvo",
+    "category": "Repostería",
+    "desc": "Sustituto natural del azúcar con cero calorías. Ideal para recetas keto y diabéticos.",
+    "detail": "Un endulzante de origen natural obtenido por fermentación de frutas y cereales no transgénicos. Tiene una textura fina tipo azúcar glass que se disuelve perfectamente en masas, cremas y merengues. No altera el índice glucémico ni provoca caries.",
+    "ingredients": "100% Eritritol granulado de cultivo ecológico molido finamente.",
+    "benefits": [
+      "Cero calorías",
+      "Índice glucémico cero",
+      "Apto para repostería keto"
+    ],
+    "price": 9.50,
+    "unit": "400 g",
+    "tags": [
+      "Vegano",
+      "Keto"
+    ],
+    "features": [
+      "vegan",
+      "keto"
+    ],
+    "img": "Eritritol"
+  },
+  {
+    "id": 15,
+    "name": "Cacao Orgánico en Polvo",
+    "category": "Repostería",
+    "desc": "Cacao 100% puro y desgrasado. Sabor intenso para galletas, bizcochos y coberturas.",
+    "detail": "Polvo de cacao de calidad premium, obtenido de habas de cacao orgánico seleccionadas y prensadas en frío. Al no pasar por procesos alcalinos industriales, conserva intactos sus polifenoles y un profundo perfil aromático. Aporta cuerpo y un color espectacular a tus postres.",
+    "ingredients": "100% Cacao puro desgrasado de cultivo ecológico certificado.",
+    "benefits": [
+      "Antioxidantes activos",
+      "Sin azúcares añadidos",
+      "Sabor intenso premium"
+    ],
+    "price": 6.80,
+    "unit": "250 g",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "cacao"
+  },
+  {
+    "id": 16,
+    "name": "Avena Con Chocolate y Avellana",
+    "category": "Desayunos",
+    "desc": "Mezcla lista para porridge con copos de avena integrales, cacao crudo y trozos de avellana.",
+    "detail": "El desayuno perfecto para las mañanas frías. Solo necesitas añadir tu leche vegetal favorita caliente y remover. Combina la fibra saciante de la avena con la textura crujiente de las avellanas tostadas y la energía limpia del cacao puro. Sin azúcares refinados.",
+    "ingredients": "Copos de avena integrales, avellanas picadas tostadas, cacao crudo en polvo, trozos de chocolate negro (85% cacao), dátiles en polvo.",
+    "benefits": [
+      "Efecto saciante duradero",
+      "Listo en 3 minutos",
+      "Rico en magnesio"
+    ],
+    "price": 5.40,
+    "unit": "400 g",
+    "tags": [
+      "Vegano",
+      "Sin lactosa"
+    ],
+    "features": [
+      "vegan",
+      "lactose"
+    ],
+    "img": "avena"
+  },
+  {
+    "id": 17,
+    "name": "Pancakes de Espelta Mix",
+    "category": "Desayunos",
+    "desc": "Harina preparada para tortitas esponjosas de espelta integral. Rica en proteínas y fácil de hacer.",
+    "detail": "Una mezcla lista para preparar panqueques nutritivos y esponjosos en minutos. La harina de espelta integral aporta un sutil sabor a nuez y una digestión mucho más ligera que el trigo común. Solo mezcla con agua o bebida vegetal y cocina a la sartén.",
+    "ingredients": "Harina de espelta integral, proteína de guisante, levadura química (bicarbonato de sodio), sal marina, vainilla natural en polvo.",
+    "benefits": [
+      "Alta digestibilidad",
+      "Fuente de proteínas",
+      "Textura extra esponjosa"
+    ],
+    "price": 6.20,
+    "unit": "350 g",
+    "tags": [
+      "Vegano",
+      "Sin lactosa"
+    ],
+    "features": [
+      "vegan",
+      "lactose"
+    ],
+    "img": "pancake"
+  },
+  {
+    "id": 18,
+    "name": "Extracto de Vainilla de Madagascar",
+    "category": "Repostería",
+    "desc": "Extracto líquido natural e intenso, elaborado con auténticas vainas de vainilla Bourbon.",
+    "detail": "El aliado indispensable para cualquier repostero. Obtenido mediante un lento proceso de maceración de vainas seleccionadas en Madagascar. Aporta un aroma profundo, dulce y floral a bizcochos, galletas, cremas y helados, sin necesidad de usar saborizantes artificiales.",
+    "ingredients": "Extracto de vainas de vainilla Bourbon de Madagascar, alcohol (35% para conservar el aroma), agua.",
+    "benefits": [
+      "Aroma 100% natural",
+      "Alta concentración",
+      "Sin azúcares añadidos"
+    ],
+    "price": 14.50,
+    "unit": "60 ml",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "vanilla"
+  },
+  {
+    "id": 19,
+    "name": "Gotas de Chocolate Negro 80%",
+    "category": "Repostería",
+    "desc": "Chispas de chocolate amargo orgánico, ideales para fundir o añadir a masas horneadas.",
+    "detail": "Gotas de chocolate de alta pureza diseñadas específicamente para resistir las temperaturas del horno sin quemarse, manteniendo su forma o creando un interior fundido irresistible. Endulzadas sutilmente con azúcar de coco, son perfectas para cookies, muffins y decoración.",
+    "ingredients": "Pasta de cacao orgánico, manteca de cacao, azúcar de coco, lecitina de girasol. Cacao mínimo 80%.",
+    "benefits": [
+      "Aptas para horneado",
+      "Bajo índice glucémico",
+      "Antioxidantes naturales"
+    ],
+    "price": 7.90,
+    "unit": "300 g",
+    "tags": [
+      "Vegano",
+      "Sin lactosa"
+    ],
+    "features": [
+      "vegan",
+      "lactose"
+    ],
+    "img": "granel-gotas-amargo"
+  }
+]

@@ -39,7 +39,7 @@ button:hover {
     --color-light: #fffbe8;
     --color-yellow: #f5f2d6;
     /* #e7e1c9; */
-    --color-green: #154f39;
+    --color-green: #185a41;
     --color-primary: #063b29;
 
     /*Fonts*/
@@ -70,7 +70,7 @@ button:hover {
     --max-width-md: 35rem;
     --max-width-xs: 27rem;
     /* --max-width-xl: 88.75rem; */
-    --min-width: 27rem;
+    --min-width: 18.75rem;
     --min-width-xs: 12.5rem;
 }
 /*Style*/
@@ -132,12 +132,16 @@ h6, .h6 {
     font: var(--text-sm);
 }
 
-p, .p, .body, label, input, select, textarea {
+p, .p {
     font: var(--text-xs);
 }
 
-a, .link, .eyebrow--text {
+a, .link, label, input, select, textarea, .body, .eyebrow--text {
     font: var(--text-xxs);
+}
+
+.feature {
+    font: var(--text-xxxs);
 }
 
 .btn {
@@ -159,6 +163,26 @@ a, .link, .eyebrow--text {
         color: var(--color-light);
     }
 
+    &:hover {
+        background-color: var(--color-yellow);
+        color: var(--color-primary);
+    }
+
+    &.btn--filter {
+        background-color: var(--color-yellow);
+        color: var(--color-green);
+
+        &.selected {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
+
+        &:hover {
+            background-color: var(--color-green);
+            color: var(--color-light);
+        }
+    }
+
     &.btn--green {
         background-color: var(--color-primary);
         color: var(--color-light);
@@ -167,30 +191,6 @@ a, .link, .eyebrow--text {
             background-color: var(--color-green);
             color: var(--color-light);
         }
-
-        &:active {
-            background-color: var(--color-primary);
-        }
-    }
-
-    &.btn--yellow {
-        background-color: var(--color-yellow);
-        color: var(--color-green);
-
-        &:hover {
-            background-color: var(--color-green);
-            color: var(--color-light);
-        }
-    }
-
-    &:hover {
-        background-color: #ffffff;
-        color: var(--color-primary);
-    }
-
-    &:active {
-        background-color: var(--color-yellow);
-        color: var(--color-primary);
     }
 }
 
@@ -478,7 +478,6 @@ button[type="submit"], .btn--green--alter {
 }
 
 .hero__features, .spaces__features {
-    font: var(--text-xxxs);
     border: 1px solid #e7e1c976;
     padding: 0.3625rem 0.9875rem;
     border-radius: 3.125rem;
@@ -495,7 +494,7 @@ button[type="submit"], .btn--green--alter {
     gap: var(--space-4);
 }
 
-.hero__background, .spaces__background, .shop__background {
+.hero__background, .spaces__background, .shop__background, .popup__background {
     position: absolute;
     top: 0;
     left: 0;
@@ -577,10 +576,6 @@ button[type="submit"], .btn--green--alter {
         background-color: rgba(0, 0, 0, 0.05);
         padding: var(--space-4);
         border-radius: var(--space-4);
-    }
-
-    & p {
-        font: var(--text-xxs);
     }
 }
 
@@ -699,6 +694,7 @@ button[type="submit"], .btn--green--alter {
 
 .clients__description {
     font-size: .75rem;
+    opacity: .7;
 }
 
 /* Contact */
@@ -739,10 +735,6 @@ button[type="submit"], .btn--green--alter {
     }
 }
 
-.contact__link__text, .contact__form__label {
-    font: var(--text-xxxs);
-}
-
 .contact__link__icon {
     background-color:#154f391b;
     font-size: 1.5rem;
@@ -781,14 +773,10 @@ button[type="submit"], .btn--green--alter {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-2);
 
     & input {
         width: 1rem;
-    }
-
-    & span {
-        font: var(--text-xxxs);
     }
 
     & a {
@@ -874,7 +862,6 @@ button[type="submit"], .btn--green--alter {
     bottom: 1rem;  
     right: 1rem;
     z-index: 1;
-    cursor: pointer;
     transition: background-color 300ms,opacity 600ms, transform 300ms;
 
     &:hover {
@@ -959,10 +946,6 @@ button[type="submit"], .btn--green--alter {
     align-items: center;
     gap: var(--space-4);
     padding: var(--space-6);
-
-    & p {
-        font: var(--text-xxs);
-    }
 
     & i, p {
         opacity: 0.5;
@@ -1155,10 +1138,6 @@ button[type="submit"], .btn--green--alter {
     gap: var(--space-8);
     justify-content: center;
 
-    & p {
-        font: var(--text-xxs);
-    }
-
     @media (width <= 48rem) {
         gap: var(--space-4);
     }
@@ -1231,7 +1210,6 @@ button[type="submit"], .btn--green--alter {
     gap: var(--space-1);
     
     & p {
-        font: var(--text-xxs);
         opacity: .7;
     }
 }
@@ -1248,7 +1226,7 @@ button[type="submit"], .btn--green--alter {
     
     &.vegan {
         background-color: #D9D5EA;
-        color: #2A0060;
+        color: #300060;
     }
 
     &.lactose {
@@ -1264,6 +1242,11 @@ button[type="submit"], .btn--green--alter {
     &.gluten {
         background-color: #F0EAC8;
         color: #564500;
+    }
+
+    &.keto {
+        background-color: #c8dbf0;
+        color: #002256;
     }
 }
 
@@ -1300,10 +1283,6 @@ button[type="submit"], .btn--green--alter {
     color: var(--color-primary);
 }
 
-.shop__block {
-
-}
-
 .shop__filter {
     display: flex;
     flex-wrap: wrap;
@@ -1325,10 +1304,12 @@ button[type="submit"], .btn--green--alter {
 .shop__item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: var(--space-4);
     transition: scale 300ms, box-shadow 300ms;
     cursor: pointer;
     z-index: 0;
+    overflow: hidden;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
@@ -1342,46 +1323,183 @@ button[type="submit"], .btn--green--alter {
     
 }
 
-.shop__info {
+.item__info {
     display: flex;
     flex-direction: column;
     padding: var(--space-4);
     gap: var(--space-4);
 
-    & div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &.shop__features {
-            justify-content: start;
-            gap: var(--space-2);
-            opacity: 1;
-        }
-    }
-
     & p {
-        font: var(--text-xxs);
         opacity: .8;
     }
 }
 
-.shop__img {
+.item__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    & p {
+        white-space: nowrap;
+    }
+}
+
+.item__features {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: var(--space-2);
+    opacity: 1;
+}
+
+.item__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: 0 var(--space-4) var(--space-4) var(--space-4) ;
+}
+
+.item__img {
     height: 12rem;
-    border-radius: var(--space-4) var(--space-4) 0 0;
     position: relative;
     overflow: hidden;
 }
 /*Shop*/
 
+/*Pop up*/
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    background-color:#0f3e2d85;
+    backdrop-filter: blur(1rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+}
+
+.popup__active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup__block {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: var(--space-4);
+    width: 90vw;
+    max-width: 47rem;
+    max-height: 90vh;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    position: relative;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.popup__img {
+    flex: 1 1 12rem;
+    max-height: 100%;
+    min-height: 12rem;
+    position: relative;
+    overflow: hidden;
+
+    & .popup__background {
+        z-index: 0;
+    }
+}
+
+.popup__info {
+    flex: 1 1 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+}
+
+.eyebrow--container {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+
+    & .category {
+        text-transform: uppercase;
+    }
+}
+
+.popup__title p {
+    opacity: .7;
+}
+
+.popup__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background-color: var(--color-yellow);
+    border-radius: var(--space-4);
+}
+
+.popup__benefits__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+
+    & li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+    }
+}
+
+.popup__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.popup__close {
+    padding: .625rem;
+    position: relative;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    border-radius: 50%;
+
+    &:hover .header__circle {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/*Pop up*/
+
 /*Checkout*/
 .checkout {
     background-color: var(--color-light);
     color: var(--color-primary);
-}
-
-.checkout__block {
-    /* background-color: red; */
 }
 
 .checkout__form {
@@ -1412,7 +1530,6 @@ button[type="submit"], .btn--green--alter {
 }
 
 .checkout__form__label {
-    font: var(--text-xxs);
     opacity: .7;
 }
 
@@ -1571,8 +1688,6 @@ button[type="submit"], .btn--green--alter {
     }
 
 }
-
-
 
 .checkout__finish {
     display: flex;
