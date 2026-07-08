@@ -6,37 +6,16 @@
     </div>
     <div class="cart__empty" id="cart__empty">
         <i class="ri-shopping-cart-line h2"></i>
-        <h2 class="h5">Tu carrito está vacío</h2>
+        <h3>Tu carrito está vacío</h3>
         <p class="body">Agrega productos de nuestra tienda para continuar.</p>
         <a class="btn btn--green" href="shop.html" title="">Ver Productos</a>
     </div>
     <ul class="cart__full" id="cart__full">
-        <li class="cart__item">
-            <picture>
-                <source srcset="media/carrot-cake.webp" type="image/webp">
-                <img class="cart__item__img" src="media/carrot-cake.jpg" alt="" loading="lazy">
-            </picture>
-            <div class="cart__item__description">
-                <h3>Proteina</h3>
-                <p>500 g</p>
-                <div class="cart__item__container">
-                    <div class="cart__item__input">
-                        <button id="product__minus"><i class="ri-subtract-line"></i></button>
-                        <p>1</p>
-                        <button id="product__add"><i class="ri-add-line"></i></button>
-                    </div>
-                    <div class="cart__item__price">
-                        <p>20 €</p>
-                        <button id="cart__item__delete"><i class="ri-close-large-line "></i></button>
-                    </div>
-                </div>
-            </div>
-        </li>
     </ul>
-    <div class="cart__checkout">
+    <div class="cart__checkout" id="cart__checkout">
         <div class="cart__total">
             <p class="link">Total</p>
-            <h4 id="cart__price">150 €</h4>
+            <h4 id="cart__price"></h4>
         </div>
         <a href="checkout.html" class="btn--green--alter">Continuar</a>
     </div>

@@ -151,29 +151,12 @@
                     </div>
                     <div class="checkout__cart">
                         <h2 class="h3">Tu pedido</h2>
-                        <ul class="checkout__cart__container">
-                            <li class="cart__item">
-                                <picture>
-                                    <source srcset="media/carrot-cake.webp" type="image/webp">
-                                    <img class="cart__item__img" src="media/carrot-cake.jpg" alt="" loading="lazy">
-                                </picture>
-                                <div class="cart__item__description">
-                                    <div>
-                                        <h3>Proteina</h3>
-                                        <div class="cart__item__container">
-                                            <p>1</p>
-                                            <p>x</p>
-                                            <p>500 g</p>
-                                        </div>
-                                    </div>
-                                    <p class="cart__item__price">20 €</p>
-                                </div>
-                            </li>
+                        <ul class="checkout__cart__container" id="checkout__cart__container">
                         </ul>
                         <div class="checkout__finish">
                             <div class="cart__total">
                                 <p>Total</p>
-                                <h4 id="cart__price">150 €</h4>
+                                <h4 id="checkout__cart__price"></h4>
                             </div>
                             <button type="submit">Pagar y finalizar compra</button>
                         </div>

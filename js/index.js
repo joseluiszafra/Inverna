@@ -4,8 +4,11 @@ const header = document.getElementById("header")
 const scroller = document.getElementById("scroller")
 const menuToggle = document.getElementById("menu-toggle")
 const nav = document.getElementById("nav")
+
+const cartCount = document.getElementById("header__cart__count")
 const cartOpen = document.getElementById("cart-open")
 const cart = document.getElementById("cart")
+
 const heroImage = document.getElementById("hero__image")
 const heroSource = document.getElementById("hero__source")
 const popup = document.getElementById("popup")
@@ -25,18 +28,21 @@ const gallery = [
     "media/store-front",
 ]
 let index = 0
-
+let shopping__cart = JSON.parse(localStorage.getItem("shopping__cart")) || []
+          
 function rotateHero(start) {
-    heroImage.style.opacity = "0"
-    setTimeout(() => {
-        index++
-        index >= gallery.length ? index = 0 : ''
-        heroImage.src = `${gallery[index]}.jpg`
-        heroSource.srcset = `${gallery[index]}.webp`
+    if (heroImage) {
+        heroImage.style.opacity = "0"
         setTimeout(() => {
-            heroImage.style.opacity = "1"
-        }, 150);
-    }, 150);
+            index++
+            index >= gallery.length ? index = 0 : ''
+            heroImage.src = `${gallery[index]}.jpg`
+            heroSource.srcset = `${gallery[index]}.webp`
+            setTimeout(() => {
+                heroImage.style.opacity = "1"
+            }, 150)
+        }, 150)
+    }
 }
 
 function toggleMenu() {
@@ -50,12 +56,10 @@ function closePopup() {
     popup.classList.remove("popup__active")
 }
 
-
-
 setInterval(rotateHero, 3000)
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY < 100) {
+    if (window.scrollY < 80) {
         scroller.classList.add("scroller-hero")
         header.classList.add("header--hero")
     } else {
@@ -67,8 +71,8 @@ window.addEventListener("scroll", () => {
 menuToggle.addEventListener("click", toggleMenu)
 
 if (popup) {
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) { closePopup() }
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) closePopup()
     })
 }
 
@@ -78,9 +82,14 @@ fetch("components/cart.html")
 .then(data => {
     cart.innerHTML = data
     const cartClose = document.getElementById("cart-close")
+    const cartEmpty = document.getElementById("cart__empty")
+    const cartFull = document.getElementById("cart__full")
+    const cartCheckout = document.getElementById("cart__checkout")
+    const cartPrice = document.getElementById("cart__price")
 
     function openCart() {
         cart.classList.add("cart__opened")
+        updateCartUI()
     }
 
     function closeCart() {
@@ -88,16 +97,96 @@ fetch("components/cart.html")
         cart.classList.add("cart__closed")
         setTimeout(() => {
             cart.classList.remove("cart__closed")
-        }, 300);
+        }, 300)
+        if (shopping__cart.length == 0) {
+            cartCount.style.display = "none"
+        } else {
+            cartCount.style.display = "block"
+            cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
+        }
+        updateCartCheckout()
     }
 
     cartOpen.addEventListener("click", openCart)
     cartClose.addEventListener("click", closeCart)
-    cart.addEventListener('click', (e) => {
-        if (e.target === cart) { closeCart() }
-    });
+    cart.addEventListener("click", (e) => {
+        if (e.target === cart) closeCart()
+    })
+
+
+    const updateCartUI = () => {
+        cartFull.innerHTML = ""
+
+        const total = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
+        cartPrice.innerHTML = `${total.toFixed(2)} €`
+
+        if (shopping__cart.length == 0) {
+            cartEmpty.style.display = "flex"
+            cartFull.style.display = "none"
+            cartCheckout.style.display = "none"
+            localStorage.removeItem("shopping__cart")
+        } else {
+            cartEmpty.style.display = "none"
+            cartFull.style.display = "flex"
+            cartCheckout.style.display = "flex"
+        }
+
+        shopping__cart.forEach((cartProduct) => {
+            const createItem = document.createElement('li')
+            createItem.classList.add('cart__item')
+            createItem.innerHTML = `
+                <picture>
+                    <source srcset="media/shop/${cartProduct.img}.webp" type="image/webp">
+                    <img class="cart__item__img" src="media/shop/${cartProduct.img}.jpg" alt="" loading="lazy">
+                </picture>
+                <div class="cart__item__description">
+                    <h3>${cartProduct.name}</h3>
+                    <p>${cartProduct.unit}</p>
+                    <div class="cart__item__container">
+                        <div class="cart__item__input">
+                            <button class="product__minus"><i class="ri-subtract-line"></i></button>
+                            <p>${cartProduct.quantity}</p>
+                            <button class="product__add"><i class="ri-add-line"></i></button>
+                        </div>
+                        <div class="cart__item__price">
+                            <p>${cartProduct.quantity * cartProduct.price} €</p>
+                            <button class="cart__item__delete"><i class="ri-close-large-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `
+            cartFull.appendChild(createItem)
+
+            const deleteBtn = createItem.querySelector('.cart__item__delete')
+            deleteBtn.addEventListener('click', () => {
+                const currentIndex = shopping__cart.findIndex(item => item.id === cartProduct.id)
+                if (currentIndex !== -1) {
+                    shopping__cart.splice(currentIndex, 1)
+                }
+                updateCartUI()
+            })
+
+            const productAdd = createItem.querySelector('.product__add')
+            productAdd.addEventListener('click', () => {
+                cartProduct.quantity++
+                updateCartUI()
+            })
+
+            const productMinus = createItem.querySelector('.product__minus')
+            productMinus.addEventListener('click', () => {
+                cartProduct.quantity--
+                if (cartProduct.quantity === 0) {
+                    const currentIndex = shopping__cart.findIndex(item => item.id === cartProduct.id)
+                    if (currentIndex !== -1) shopping__cart.splice(currentIndex, 1)
+                }
+                updateCartUI()
+            })
+            localStorage.setItem("shopping__cart", JSON.stringify(shopping__cart))
+        })
+    }
 })
 .catch(error => console.error(error))
+
 
 // Fetch shop products
 fetch("components/shop.json")
@@ -137,7 +226,7 @@ fetch("components/shop.json")
 
         shopContainer.innerHTML = ""
 
-        productsToShow.forEach((product, i) => {
+        productsToShow.forEach((product) => {
             const createProduct = document.createElement('li')
             createProduct.classList.add('shop__item')
             createProduct.innerHTML = `
@@ -168,10 +257,46 @@ fetch("components/shop.json")
             `
             shopContainer.appendChild(createProduct)
 
-            createProduct.addEventListener('click', (e) => {
-                if (e.target.closest('.btn-agregar')) return;
+            // Helper function to handle adding to cart (avoids code repetition)
+            const addToCart = () => {
+                const repeat = shopping__cart.find((repeatProduct) => repeatProduct.id === product.id)
 
-                popup.classList.add('popup__active');
+                if (repeat) {
+                    repeat.quantity++
+                } else {
+                    shopping__cart.push({
+                        id: product.id,
+                        img: product.img,
+                        name: product.name,
+                        unit: product.unit,
+                        price: product.price,
+                        quantity: product.quantity,
+                    })
+                }
+                
+
+                if (shopping__cart.length == 0) {
+                    cartCount.style.display = "none"
+                } else {
+                    cartCount.style.display = "block"
+                    cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
+                }
+                
+                localStorage.setItem("shopping__cart", JSON.stringify(shopping__cart))
+            }
+
+            // 1. FIX: Scope the selector to 'createProduct' instead of 'document'
+            const addProductBtn = createProduct.querySelector('.btn-agregar')
+            addProductBtn.addEventListener("click", (e) => {
+                e.stopPropagation() // Prevents the card click event from firing when clicking this button
+                addToCart()
+            })
+
+
+            createProduct.addEventListener("click", (e) => {
+                if (e.target.closest('.btn-agregar')) return
+
+                popup.classList.add('popup__active')
                 popup.innerHTML = `
                     <div class="popup__block" id="popup__block">
                         <div class="popup__img">
@@ -203,7 +328,7 @@ fetch("components/shop.json")
                             <p class="body">${product.ingredients}</p>
                             <div class="popup__bottom">
                                 <h4>${product.price} €</h4>
-                                <button class="btn btn--green btn-agregar"><i class="ri-add-line"></i>Agregar al carrito</button>
+                                <button class="btn btn--green btn-agregar-popup"><i class="ri-add-line"></i>Agregar al carrito</button>
                             </div>
                             <button id="popup-close">
                                 <div class="popup__close">
@@ -217,22 +342,64 @@ fetch("components/shop.json")
                 if (popupClose) {
                     popupClose.addEventListener("click", closePopup)
                 }
+
+                const popupAddBtn = popup.querySelector('.btn-agregar-popup')
+                if (popupAddBtn) {
+                    popupAddBtn.addEventListener("click", addToCart)
+                }
+                
             })
         })
     }
-    displayProducts(data);
+    displayProducts(data)
 })
 .catch(error => console.error(error))
 
 
+if (shopping__cart.length == 0) {
+    cartCount.style.display = "none"
+} else {
+    cartCount.style.display = "block"
+    cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
+}
 
 
+const ayuda = document.getElementById("checkout__cart__container")
+const otro = document.getElementById("checkout__cart__price")
+const updateCartCheckout = () => {
+    ayuda.innerHTML = ""
+
+    const total2 = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
+    otro.innerHTML = `${total2.toFixed(2)} €`
+
+    shopping__cart.forEach((cartProduct) => {
+        const createItem = document.createElement('li')
+        createItem.classList.add('cart__item')
+        createItem.innerHTML = `
+            <picture>
+                <source srcset="media/shop/${cartProduct.img}.webp" type="image/webp">
+                <img class="cart__item__img" src="media/shop/${cartProduct.img}.jpg" alt="" loading="lazy">
+            </picture>
+            <div class="cart__item__description">
+                <div>
+                    <h3>${cartProduct.name}</h3>
+                    <div class="cart__item__container">
+                        <p>${cartProduct.quantity}</p>
+                        <p>x</p>
+                        <p>${cartProduct.unit}</p>
+                    </div>
+                </div>
+                <p class="cart__item__price">${cartProduct.quantity * cartProduct.price} €</p>
+            </div>
+        `
+        ayuda.appendChild(createItem)
+
+    })
+}
+
+updateCartCheckout()
 
 
-// const cartCount = document.getElementById("header__cart__count")
-
-// cartCount.innerText = "2"
-// cartCount.style.display = "block"
 
 
 const btnFilter = document.querySelectorAll(".btn--filter")
@@ -282,8 +449,3 @@ if (btnBack) {
         window.history.back()
     })
 }
-
-
-
-
-
