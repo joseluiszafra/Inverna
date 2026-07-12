@@ -36,25 +36,25 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
                 </picture>
-                <p class="h5">inverna</p>
+                <p class="h3">inverna</p>
             </a>
             <nav id="nav" class="header__nav no-mobile " >
                 <ul class="header__ul">
-                    <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
-                    <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
-                    <li><a href="shop.html" title="">Tienda<div class="header__underline"></div></a></li>
-                    <li><a href="index.html#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
+                    <li><a href="index.html" title="">Inicio<span class="header__underline"></span></a></li>
+                    <li><a href="cafeteria.html" title="">Cafetería<span class="header__underline"></span></a></li>
+                    <li><a href="shop.html" title="">Tienda<span class="header__underline"></span></a></li>
+                    <li><a href="index.html#visit-us" title="">Visitanos<span class="header__underline"></span></a></li>
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" title="">
+                <button id="cart-open" class="header__icon">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <span class="header__cart__count" id="header__cart__count"></span>
+                    <p class="header__cart__count" id="header__cart__count"></p>
                 </button>
-                <button id="menu-toggle" class="no-desktop" title="">
+                <button id="menu-toggle" class="header__icon no-desktop">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -65,10 +65,10 @@
 
     <main>
         <!-- Hero -->
-        <section class="hero--alternate section">
+        <section class="hero--alternate section section--primary ">
             <div class="hero__block--alternate block">
                 <h1 class="eyebrow--text">Un espacio para ti</h1>
-                <div class="hero__title--alternate">
+                <div class="hero__title">
                     <h2>Nuestra Cafetería</h2>
                     <p>Un lugar donde el comer bien es un placer, no un sacrificio.</p>
                 </div>
@@ -77,7 +77,7 @@
         <!-- Hero -->
          
         <!-- Info -->
-        <section class="info section">
+        <section class="info section section--yellow">
             <div class="info__block block">
                 <p class="body"><i class="ri-time-line"></i> Lun – Sáb: 9:30 am – 8:00 pm</p>
                 <p class="body"><i class="ri-cup-line"></i> Café de especialidad · Bebidas vegetales</p>
@@ -87,33 +87,24 @@
         <!-- Info -->
 
         <!-- Gallery -->
-        <section class="gallery section">
+        <section class="gallery section section--light">
             <div class="gallery__block block">
                 <div class="large">
                     <picture>
-                        <source srcset="media/cafeteria/table.jpg"
-                            type="image/webp">
-                        <img class="gallery__img"
-                            src="media/cafeteria/table.jpg" alt="lunch"
-                            loading="lazy">
+                        <source srcset="media/cafeteria/table.webp" type="image/webp">
+                        <img class="gallery__img" src="media/cafeteria/table.jpg" alt="lunch" loading="lazy">
                     </picture>
                 </div>
                 <div>
                     <picture>
-                        <source srcset="media/cafeteria/bowls.jpg"
-                            type="image/webp">
-                        <img class="gallery__img"
-                            src="media/cafeteria/bowls.jpg" alt="bowls"
-                            loading="lazy">
+                        <source srcset="media/cafeteria/bowls.webp" type="image/webp">
+                        <img class="gallery__img" src="media/cafeteria/bowls.jpg" alt="bowls" loading="lazy">
                     </picture>
                 </div>
                 <div>
                     <picture>
-                        <source srcset="media/cafeteria/tresleches.jpg"
-                            type="image/webp">
-                        <img class="gallery__img"
-                            src="media/cafeteria/tresleches.jpg" alt="cake"
-                            loading="lazy">
+                        <source srcset="media/cafeteria/tresleches.webp" type="image/webp">
+                        <img class="gallery__img" src="media/cafeteria/tresleches.jpg" alt="cake" loading="lazy">
                     </picture>
                 </div>
             </div>
@@ -121,187 +112,187 @@
         <!-- Gallery -->
 
         <!-- Menu -->
-        <section class="menu section">
+        <section class="menu section section--light">
             <div class="menu__block block">
                 <h2 class="eyebrow--text">MENÚ COMPLETO</h2>
                 <h3 class="h2">Todo lo que preparamos</h3>
                 <div class="menu__category">
-                    <h4>Batidos & Jugos</h4>
+                    <h4 class="menu__subtitle">Batidos & Jugos</h4>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Green Power</h5>
-                                    <span class="menu__feature vegan">Vegano</span>
+                                    <p class="menu__feature feature vegan">Vegano</p>
                                 </div>
-                                <p class="body">Espinaca, manzana, jengibre, limón, almendras</p>
+                                <p class="body menu__item__desc">Espinaca, manzana, jengibre, limón, almendras</p>
                             </div>
-                            <p class="menu__item__price">6,50 €</p>
+                            <p class="no-wrap">6,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Berry Burst</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Frutillas, arándanos, frambuesas, banana, avena</p>
+                                <p class="body menu__item__desc">Frutillas, arándanos, frambuesas, banana, avena</p>
                             </div>
-                            <p class="menu__item__price">7,00 €</p>
+                            <p class="no-wrap">7,00 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Tropical Sunrise</h5>
-                                    <span class="menu__feature energy">Energizante</span>
+                                    <p class="menu__feature feature energy">Energizante</p>
                                 </div>
-                                <p class="body">Mango, piña, cúrcuma, coco, naranja natural</p>
+                                <p class="body menu__item__desc">Mango, piña, cúrcuma, coco, naranja natural</p>
                             </div>
-                            <p class="menu__item__price">7,50 €</p>
+                            <p class="no-wrap">7,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Golden Milk</h5>
-                                    <span class="menu__feature lactose">Anti-inflamatorio</span>
+                                    <p class="menu__feature feature lactose">Anti-inflamatorio</p>
                                 </div>
-                                <p class="body">Leche de coco, cúrcuma, jengibre, pimienta negra</p>
+                                <p class="body menu__item__desc">Leche de coco, cúrcuma, jengibre, pimienta negra</p>
                             </div>
-                            <p class="menu__item__price">6,00 €</p>
+                            <p class="no-wrap">6,00 €</p>
                         </li>
                     </ul>
                 </div>
                 <div class="menu__category">
-                    <h4>Postres & Dulces</h4>
+                    <h4 class="menu__subtitle">Postres & Dulces</h4>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Brownie de Chocolate</h5>
-                                    <span class="menu__feature gluten">Sin gluten</span>
+                                    <p class="menu__feature feature gluten">Sin gluten</p>
                                 </div>
-                                <p class="body">Sin gluten, base de nueces y cacao orgánico</p>
+                                <p class="body menu__item__desc">Sin gluten, base de nueces y cacao orgánico</p>
                             </div>
-                            <p class="menu__item__price">4,50 €</p>
+                            <p class="no-wrap">4,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Tarta de Frutos Rojos</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Masa de almendras, crema de coco, berries frescos</p>
+                                <p class="body menu__item__desc">Masa de almendras, crema de coco, berries frescos</p>
                             </div>
-                            <p class="menu__item__price">5,50 €</p>
+                            <p class="no-wrap">5,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Cheesecake de Limón</h5>
-                                    <span class="menu__feature vegan">Vegano</span>
+                                    <p class="menu__feature feature vegan">Vegano</p>
                                 </div>
-                                <p class="body">Base de dátil y almendra, relleno de anacardo</p>
+                                <p class="body menu__item__desc">Base de dátil y almendra, relleno de anacardo</p>
                             </div>
-                            <p class="menu__item__price">5,00 €</p>
+                            <p class="no-wrap">5,00 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Cookies de Avena</h5>
-                                    <span class="menu__feature gluten">Sin gluten</span>
+                                    <p class="menu__feature feature gluten">Sin gluten</p>
                                 </div>
-                                <p class="body">Con chispas de chocolate amargo y nueces</p>
+                                <p class="body menu__item__desc">Con chispas de chocolate amargo y nueces</p>
                             </div>
-                            <p class="menu__item__price">2,50 €</p>
+                            <p class="no-wrap">2,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Muffin de Arándano</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Harina de arroz, leche de almendra, sin azúcar refinada</p>
+                                <p class="body menu__item__desc">Harina de arroz, leche de almendra, sin azúcar refinada</p>
                             </div>
-                            <p class="menu__item__price">3,00 €</p>
+                            <p class="no-wrap">3,00 €</p>
                         </li>
                     </ul>
                 </div>
                 <div class="menu__category">
-                    <h4>Snacks & Bowls</h4>
+                    <h4 class="menu__subtitle">Snacks & Bowls</h4>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Granola Bowl</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Granola artesanal, yogur de coco, frutas de estación</p>
+                                <p class="body menu__item__desc">Granola artesanal, yogur de coco, frutas de estación</p>
                             </div>
-                            <p class="menu__item__price">5,80 €</p>
+                            <p class="no-wrap">5,80 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Smoothie Bowl</h5>
-                                    <span class="menu__feature gluten">Sin gluten</span>
+                                    <p class="menu__feature feature gluten">Sin gluten</p>
                                 </div>
-                                <p class="body">Base de açaí, granola sin gluten, frutas, semillas</p>
+                                <p class="body menu__item__desc">Base de açaí, granola sin gluten, frutas, semillas</p>
                             </div>
-                            <p class="menu__item__price">8,50 €</p>
+                            <p class="no-wrap">8,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Buddha Bowl</h5>
-                                    <span class="menu__feature vegan">Vegano</span>
+                                    <p class="menu__feature feature vegan">Vegano</p>
                                 </div>
-                                <p class="body">Arroz integral, garbanzos, vegetales asados, tahini</p>
+                                <p class="body menu__item__desc">Arroz integral, garbanzos, vegetales asados, tahini</p>
                             </div>
-                            <p class="menu__item__price">9,50 €</p>
+                            <p class="no-wrap">9,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Toast de Aguacate</h5>
-                                    <span class="menu__feature vegan">Vegano</span>
+                                    <p class="menu__feature feature vegan">Vegano</p>
                                 </div>
-                                <p class="body">Pan de arroz, aguacate, tomate cherry, microgreens</p>
+                                <p class="body menu__item__desc">Pan de arroz, aguacate, tomate cherry, microgreens</p>
                             </div>
-                            <p class="menu__item__price">7,00 €</p>
+                            <p class="no-wrap">7,00 €</p>
                         </li>
                     </ul>
                 </div>
                 <div class="menu__category">
-                    <h4>Bebidas Calientes</h4>
+                    <h4 class="menu__subtitle">Bebidas Calientes</h4>
                     <ul class="menu__list">
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Café de especialidad</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Con leche de almendras, avena o coco</p>
+                                <p class="body menu__item__desc">Con leche de almendras, avena o coco</p>
                             </div>
-                            <p class="menu__item__price">3,50 €</p>
+                            <p class="no-wrap">3,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Matcha Latte</h5>
-                                    <span class="menu__feature vegan">Vegano</span>
+                                    <p class="menu__feature feature vegan">Vegano</p>
                                 </div>
-                                <p class="body">Matcha japonés ceremonial con leche de avena</p>
+                                <p class="body menu__item__desc">Matcha japonés ceremonial con leche de avena</p>
                             </div>
-                            <p class="menu__item__price">4,50 €</p>
+                            <p class="no-wrap">4,50 €</p>
                         </li>
                         <li class="menu__item">
                             <div class="menu__item__top">
                                 <div class="menu__item__title">
                                     <h5>Chai Latte</h5>
-                                    <span class="menu__feature lactose">Sin lactosa</span>
+                                    <p class="menu__feature feature lactose">Sin lactosa</p>
                                 </div>
-                                <p class="body">Mezcla de especias, té negro y leche de coco</p>
+                                <p class="body menu__item__desc">Mezcla de especias, té negro y leche de coco</p>
                             </div>
-                            <p class="menu__item__price">4,00 €</p>
+                            <p class="no-wrap">4,00 €</p>
                         </li>
                     </ul>
                 </div>
@@ -310,7 +301,7 @@
         <!-- Menu -->
         
         <!-- Reviews -->
-        <section class="reviews section">
+        <section class="reviews section section--light">
             <div class="reviews__block block">
                 <div class="reviews__card">
                     <div class="clients__stars">
@@ -321,25 +312,25 @@
                         <i class="ri-star-fill"></i>
                     </div>
                     <h2 class=" h4">"El mejor lugar para comer sano en la ciudad"</h2>
-                    <p class="clients__description">Reseñas de Google · 4.9 ★ promedio</p>
+                    <p class="body clients__description">Reseñas de Google · 4.9 ★ promedio</p>
                 </div>
             </div>
         </section>
         <!-- Reviews -->
-
-        <!-- Shopping Cart -->
-        <section class="cart" id="cart">
-        </section>
-        <!-- Shopping Cart -->
 
         <!-- Scroller -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
+
+        <!-- Shopping Cart -->
+        <section class="cart" id="cart">
+        </section>
+        <!-- Shopping Cart -->
     </main>
 
-    <footer class="footer">
+    <footer class="footer section--primary">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
@@ -361,7 +352,7 @@
                 <li><a href="#" title="">Prolítica de Privacidad</a></li>
                 <li><a href="#" title="">Política de Cookies</a></li>
             </ul>
-            <p class="footer__copyright">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
+            <p class="footer__copyright feature">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
         </div>
     </footer>
 </body>

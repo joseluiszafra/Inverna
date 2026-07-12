@@ -36,25 +36,25 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
                 </picture>
-                <p class="h5">inverna</p>
+                <p class="h3">inverna</p>
             </a>
             <nav id="nav" class="header__nav no-mobile " >
                 <ul class="header__ul">
-                    <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
-                    <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
-                    <li><a href="shop.html" title="">Tienda<div class="header__underline"></div></a></li>
-                    <li><a href="index.html#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
+                    <li><a href="index.html" title="">Inicio<span class="header__underline"></span></a></li>
+                    <li><a href="cafeteria.html" title="">Cafetería<span class="header__underline"></span></a></li>
+                    <li><a href="shop.html" title="">Tienda<span class="header__underline"></span></a></li>
+                    <li><a href="index.html#visit-us" title="">Visitanos<span class="header__underline"></span></a></li>
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" title="">
+                <button id="cart-open" class="header__icon">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <span class="header__cart__count" id="header__cart__count"></span>
+                    <p class="header__cart__count" id="header__cart__count"></p>
                 </button>
-                <button id="menu-toggle" class="no-desktop" title="">
+                <button id="menu-toggle" class="header__icon no-desktop">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -67,8 +67,12 @@
         <!-- Hero -->
         <section class="hero section">
             <div class="hero__block">
+                <picture>
+                    <source srcset="media/store.webp" type="image/webp" id="hero__source">
+                    <img class="hero__background" id="hero__image" src="media/store.jpg" alt="store" loading="lazy">
+                </picture>
                 <div class="hero__content">
-                    <span class="hero__features feature">SIN GLUTEN · SIN LACTOSA · 100% NATURAL</span>
+                    <span class="hero__feature feature">SIN GLUTEN · SIN LACTOSA · 100% NATURAL</span>
                     <h1>Nutrición que <span class="hero__title--green">sabe bien</span></h1>
                     <p>Tienda y cafetería de alimentos saludables. Postres, batidos y opciones gourmet sin gluten y sin
                         lactosa, elaborados con ingredientes naturales.</p>
@@ -77,16 +81,12 @@
                         <a href="cafeteria.html" class="btn btn--border" title="">Ver cafeteria</a>
                     </div>
                 </div>
-                <picture>
-                    <source srcset="media/store.webp" type="image/webp" id="hero__source">
-                    <img class="hero__background" id="hero__image" src="media/store.jpg" alt="store" loading="lazy">
-                </picture>
             </div>
         </section>
         <!-- Hero -->
 
         <!-- History -->
-        <section class="history section">
+        <section class="history section section--light">
             <div class="history__block block">
                 <div class="history__text">
                     <h2 class="eyebrow--text">NUESTRA HISTORIA</h2>
@@ -104,7 +104,7 @@
                     </picture>
                     <div class="history__info">
                         <p class="h2">100%</p>
-                        <p>ingredientes naturales y libres de alérgenos</p>
+                        <p>Ingredientes naturales y libres de alérgenos</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
         <!-- History  -->
 
         <!-- Features -->
-        <section class="features section">
+        <section class="features section section--light">
             <div class="features__block block">
                 <div class="features__card">
                     <i class="ri-bread-line"></i>
@@ -121,7 +121,7 @@
                         dieta más limpia.</p>
                 </div>
                 <div class="features__card">
-                    <i class="ri-cup-line"></i>
+                    <i class="ri-drinks-line"></i>
                     <h2 class="h5">Sin Lactosa</h2>
                     <p class="body">Elaboramos nuestras recetas sin lácteos, usando alternativas vegetales de la más alta calidad.
                     </p>
@@ -142,7 +142,7 @@
         <!-- Features -->
 
         <!-- Spaces -->
-        <section class="spaces section">
+        <section class="spaces section section--yellow">
             <div class="spaces__block block">
                 <h2 class="eyebrow--text">DOS FORMAS DE DISFRUTAR INVERNA</h2>
                 <h3 class="h2">Nuestros espacios</h3 class="h2">
@@ -153,23 +153,23 @@
                         <div class="spaces__info">
                             <i class="ri-cup-line spaces__icon"></i>
                             <h4>Cafeteria</h4>
-                            <p>Un espacio acogedor donde cada detalle está pensado para tu bienestar. Batidos frescos,
+                            <p class="body">Un espacio acogedor donde cada detalle está pensado para tu bienestar. Batidos frescos,
                                 postres artesanales sin gluten, café de especialidad y platos saludables preparados al
                                 momento. Ven, siéntate y reconecta.</p>
-                            <ul class="spaces__grid">
-                                <li class="spaces__features feature">Batidos</li>
-                                <li class="spaces__features feature">Postres</li>
-                                <li class="spaces__features feature">Bowls</li>
-                                <li class="spaces__features feature">Café</li>
+                            <ul class="spaces__features">
+                                <li class="spaces__feature feature">Batidos</li>
+                                <li class="spaces__feature feature">Postres</li>
+                                <li class="spaces__feature feature">Bowls</li>
+                                <li class="spaces__feature feature">Café</li>
                             </ul>
                             <a href="cafeteria.html" class="btn btn--filled" title="">Ver menú completo<i
                                     class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
-                            <source srcset="media/cuchareables.webp"
+                            <source srcset="media/chococake.webp"
                                 type="image/webp">
                             <img class="spaces__background"
-                                src="media/cuchareables.jpg" alt="small cake"
+                                src="media/chococake.jpg" alt="small cake"
                                 loading=" lazy">
                         </picture>
                     </div>
@@ -177,22 +177,22 @@
                         <div class="spaces__info">
                             <i class="ri-shopping-bag-3-line spaces__icon"></i>
                             <h4>Tienda</h4>
-                            <p>Llevate lo mejor de Inverna a tu hogar. Nuestra tienda ofrece granolas artesanales,
+                            <p class="body">Llevate lo mejor de Inverna a tu hogar. Nuestra tienda ofrece granolas artesanales,
                                 harinas
-                                sin gluten, superfoods, conservas naturales y mucho más. Productos seleccionados para
+                                sin gluten, superfoods, conservas naturales y más. Productos seleccionados para
                                 que
                                 comer bien sea parte de tu día a día.</p>
-                            <ul class="spaces__grid">
-                                <li class="spaces__features feature">Granolas</li>
-                                <li class="spaces__features feature">Superfoods</li>
-                                <li class="spaces__features feature">Reposteria</li>
-                                <li class="spaces__features feature">Despensa</li>
+                            <ul class="spaces__features">
+                                <li class="spaces__feature feature">Granolas</li>
+                                <li class="spaces__feature feature">Superfoods</li>
+                                <li class="spaces__feature feature">Reposteria</li>
+                                <li class="spaces__feature feature">Despensa</li>
                             </ul>
                             <a href="shop.html" class="btn btn--filled" title="">Ver productos<i class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
-                            <source srcset="media/bread.webp" type="image/webp">
-                            <img class="spaces__background" src="media/bread.jpg" alt="bread" loading=" lazy">
+                            <source srcset="media/basket.webp" type="image/webp">
+                            <img class="spaces__background" src="media/basket.jpg" alt="bread" loading=" lazy">
                         </picture>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
         <!-- Spaces -->
 
         <!-- Clients -->
-        <section class="clients section">
+        <section class="clients section section--primary">
             <div class="clients__block block">
                 <h2 class="eyebrow--text">LO QUE DICEN NUESTROS CLIENTES</h2>
                 <h3 class="h2">Historias reales</h3>
@@ -214,11 +214,11 @@
                             <i class="ri-star-fill"></i>
                             <i class="ri-star-fill"></i>
                         </div>
-                        <p class="clients__review">"Finalmente encontré un lugar donde puedo comer postres sin
+                        <p class="h5 clients__review">"Finalmente encontré un lugar donde puedo comer postres sin
                             preocuparme. El brownie sin gluten es increíblemente rico, ¡lo pido siempre!"</p>
                         <div>
                             <h4>María F.</h4>
-                            <p class="clients__description">Celíaca desde 2018</p>
+                            <p class="feature clients__description">Celíaca desde 2018</p>
                         </div>
                     </div>
                     <div class="clients__card">
@@ -229,11 +229,11 @@
                             <i class="ri-star-fill"></i>
                             <i class="ri-star-fill"></i>
                         </div>
-                        <p class="clients__review">"Los batidos son una locura. El Green Power se convirtió en mi ritual
+                        <p class="h5 clients__review">"Los batidos son una locura. El Green Power se convirtió en mi ritual
                             de las mañanas. El ambiente del local es hermoso y acogedor."</p>
                         <div>
                             <h4>Diego S.</h4>
-                            <p class="clients__description">Cliente habitual</p>
+                            <p class="feature clients__description">Cliente habitual</p>
                         </div>
                     </div>
                     <div class="clients__card">
@@ -244,11 +244,11 @@
                             <i class="ri-star-fill"></i>
                             <i class="ri-star-fill"></i>
                         </div>
-                        <p class="clients__review">"Como intolerante a la lactosa siempre me quedaba sin opciones en
+                        <p class="h5 clients__review">"Como intolerante a la lactosa siempre me quedaba sin opciones en
                             cafeterías. Inverna cambió eso completamente. ¡Altamente recomendado!"</p>
                         <div>
                             <h4>Valentina R.</h4>
-                            <p class="clients__description">Intolerante a la lactosa</p>
+                            <p class="feature clients__description">Intolerante a la lactosa</p>
                         </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
         <!-- Clients -->
 
         <!-- Contact -->
-        <section class="contact section">
+        <section class="contact section section--yellow">
             <div class="contact__block block">
                 <div class="contact__text">
                     <h2 class="eyebrow--text">CONTACTO</h2>
@@ -291,7 +291,7 @@
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="message">Mensaje:</label>
-                            <textarea class="contact__form__message"id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message" required></textarea>
+                            <textarea class="contact__form__message" id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message" required></textarea>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form-acceptance">
@@ -307,7 +307,7 @@
         <!-- Contact -->
 
         <!-- Visit -->
-        <section class="visit section" id="visit-us">
+        <section class="visit section section--light" id="visit-us">
             <div class="visit__block block">
                 <div class="visit__title">
                     <i class="ri-map-pin-line"></i>
@@ -317,21 +317,21 @@
                     <div class="visit__card">
                         <iframe class="visit__map"
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3949.926965568875!2d-79.0288834!3d-8.1089193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3db53ce425d3%3A0x7c4ff7b00075ec1a!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054965451!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="no-referrer-when-downgrade" title="mapa centro historico">
                         </iframe>
-                        <div class="visit__text">
-                            <div class="visit__text__detail">
+                        <div class="visit__container">
+                            <div class="visit__text">
                                 <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
                                     <h3 class="h5">Centro Histórico</h3>
-                                    <p class="link">Jirón Junín 444</p>
+                                    <p class="body">Jirón Junín 444</p>
                                 </div>
                             </div>
-                            <div class="visit__text__detail">
+                            <div class="visit__text">
                                 <i class="ri-time-line"></i>
-                                <p class="link">Lun – Sab: 9:30 am – 8:00 pm</p>
+                                <p class="body">Lun – Sab: 9:30 am – 8:00 pm</p>
                             </div>
-                            <div class="visit__text__detail">
+                            <div class="visit__text">
                                 <i class="ri-phone-line"></i>
                                 <a href="tel:+51 952887408" title="">+51 952 887 408</a>
                             </div>
@@ -340,21 +340,21 @@
                     <div class="visit__card">
                         <iframe class="visit__map"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7899.3867213154035!2d-79.034795!3d-8.132667499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d0078ff7bd9%3A0xc3c20805b4bcc4d!2sInverna%20Biotienda!5e0!3m2!1ses-419!2spe!4v1781054804570!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="no-referrer-when-downgrade" title="mapa el golf">
                         </iframe>
-                        <div class="visit__text">
-                            <div class="visit__text__detail">
+                        <div class="visit__container">
+                            <div class="visit__text">
                                 <i class="ri-map-pin-line visit__icon"></i>
                                 <div>
                                     <h3 class="h5">Las Praderas del Golf</h3>
-                                    <p class="link">Av. Prol. Cesar Vallejo D54</p>
+                                    <p class="body">Av. Prol. Cesar Vallejo D54</p>
                                 </div>
                             </div>
-                            <div class="visit__text__detail">
+                            <div class="visit__text">
                                 <i class="ri-time-line"></i>
-                                <p class="link">Lun – Sab: 9:30 am – 9:00 pm</p>
+                                <p class="body">Lun – Sab: 9:30 am – 9:00 pm</p>
                             </div>
-                            <div class="visit__text__detail">
+                            <div class="visit__text">
                                 <i class="ri-phone-line"></i>
                                 <a href="tel:+51 992842415" title="">+51 992 842 415</a>
                             </div>
@@ -365,20 +365,20 @@
         </section>
         <!-- Visit -->
 
-        <!-- Shopping Cart -->
-        <section class="cart" id="cart">  
-        </section>
-        <!-- Shopping Cart -->
-
         <!-- Scroller -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
-        
+
+        <!-- Shopping Cart -->
+        <section class="cart" id="cart">  
+        </section>
+        <!-- Shopping Cart -->
+
     </main>
 
-    <footer class="footer">
+    <footer class="footer section--primary">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
@@ -389,10 +389,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line footer__icon"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line footer__icon"></i></a></li>
-                    <li><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line footer__icon"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line footer__icon"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">
@@ -400,7 +400,7 @@
                 <li><a href="#" title="">Prolítica de Privacidad</a></li>
                 <li><a href="#" title="">Política de Cookies</a></li>
             </ul>
-            <p class="footer__copyright">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
+            <p class="footer__copyright feature">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
         </div>
     </footer>
 </body>

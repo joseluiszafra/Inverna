@@ -474,5 +474,55 @@
     ],
     "img": "granel-gotas-amargo",
     "quantity": 1
+  },
+  {
+    "id": 20,
+    "name": "Vinagre de Manzana con la Madre",
+    "category": "Despensa",
+    "desc": "Vinagre de manzana orgánico, sin filtrar ni pasteurizar. Mantiene la 'madre' intacta para el bienestar digestivo.",
+    "detail": "Elaborado artesanalmente a partir del zumo fermentado de manzanas ecológicas. Al no estar filtrado ni pasteurizado, conserva 'la madre', una colonia de bacterias beneficiosas, enzimas y potasio. Perfecto para aliños crudos o para tomar diluido en agua por las mañanas.",
+    "ingredients": "100% Sidra de manzana orgánica fermentada de forma natural. Acidez al 5%.",
+    "benefits": [
+      "Probióticos naturales",
+      "Regula el pH digestivo",
+      "Sin filtrar ni refinar"
+    ],
+    "price": 6.50,
+    "unit": "500 ml",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "vinagre-manzana",
+    "quantity": 1
+  },
+  {
+    "id": 21,
+    "name": "Maca Peruana Orgánica en Polvo",
+    "category": "Superfoods",
+    "desc": "Raíz andina adaptógena en polvo. Aumenta la vitalidad, resistencia física y el equilibrio hormonal.",
+    "detail": "Cultivada de forma sostenible en las tierras altas de los Andes. La maca es un superalimento adaptógeno milenario que ayuda al cuerpo a gestionar el estrés, mejora los niveles de energía y apoya el sistema endocrino. Posee un sabor sutil, ligeramente dulce y malteado, ideal para enriquecer tus batidos.",
+    "ingredients": "100% Raíz de maca amarilla orgánica deshidratada y pulverizada.",
+    "benefits": [
+      "Energizante libre de cafeína",
+      "Propiedades adaptógenas",
+      "Apoyo hormonal natural"
+    ],
+    "price": 11.20,
+    "unit": "200 g",
+    "tags": [
+      "Vegano",
+      "Sin gluten"
+    ],
+    "features": [
+      "vegan",
+      "gluten"
+    ],
+    "img": "maca-organica",
+    "quantity": 1
   }
 ]

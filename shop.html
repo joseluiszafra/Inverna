@@ -41,56 +41,56 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
                 </picture>
-                <p class="h5">inverna</p>
+                <p class="h3">inverna</p>
             </a>
-            <nav id="nav" class="header__nav no-mobile ">
+            <nav id="nav" class="header__nav no-mobile " >
                 <ul class="header__ul">
-                    <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
-                    <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
-                    <li><a href="shop.html" title="">Tienda<div class="header__underline"></div></a></li>
-                    <li><a href="index.html#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
+                    <li><a href="index.html" title="">Inicio<span class="header__underline"></span></a></li>
+                    <li><a href="cafeteria.html" title="">Cafetería<span class="header__underline"></span></a></li>
+                    <li><a href="shop.html" title="">Tienda<span class="header__underline"></span></a></li>
+                    <li><a href="index.html#visit-us" title="">Visitanos<span class="header__underline"></span></a></li>
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" title="">
+                <button id="cart-open" class="header__icon">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <span class="header__cart__count" id="header__cart__count"></span>
+                    <p class="header__cart__count" id="header__cart__count"></p>
                 </button>
-                <button id="menu-toggle" class="no-desktop" title="">
+                <button id="menu-toggle" class="header__icon no-desktop">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
                 </button>
             </div>
+        </div>
     </header>
 
     <main>
         <!-- Hero -->
-        <section class="hero--alternate section">
+        <section class="hero--alternate section section--primary ">
             <div class="hero__block--alternate block">
                 <h1 class="eyebrow--text">Productos</h1>
-                <div class="hero__title--alternate">
+                <div class="hero__title">
                     <h2>Nuestra Tienda</h2>
-                    <p>Llevate lo mejor de Inverna a tu hogar. Productos naturales, artesanales y libres de alérgenos.
-                    </p>
+                    <p>Llevate lo mejor de Inverna a tu hogar. Productos naturales, artesanales y libres de alérgenos.</p>
                 </div>
             </div>
         </section>
         <!-- Hero -->
 
         <!-- shop -->
-        <section class="shop section">
+        <section class="shop section section--light">
             <div class="shop__block block">
                 <div class="shop__filter">
-                    <button class="btn btn--filter selected" id="btn__all">Todo</button>
-                    <button class="btn btn--filter" id="btn__breakfast">Desayunos</button>
-                    <button class="btn btn--filter" id="btn__snacks">Snacks</button>
-                    <button class="btn btn--filter" id="btn__superfoods">Superfoods</button>
-                    <button class="btn btn--filter" id="btn__baking">Reposteria</button>
-                    <button class="btn btn--filter" id="btn__pantry">Despensa</button>
+                    <button class="btn btn--filter selected" data-category="Todos">Todo</button>
+                    <button class="btn btn--filter" data-category="Desayunos">Desayunos</button>
+                    <button class="btn btn--filter" data-category="Snacks">Snacks</button>
+                    <button class="btn btn--filter" data-category="Superfoods">Superfoods</button>
+                    <button class="btn btn--filter" data-category="Repostería">Repostería</button>
+                    <button class="btn btn--filter" data-category="Despensa">Despensa</button>
                 </div>
                 <ul class="shop__container" id="shop__container">
                 </ul>
@@ -112,10 +112,10 @@
         <!-- Shopping Cart -->
         <section class="cart" id="cart">
         </section>
-        <!-- Shopping Cart -->        
+        <!-- Shopping Cart -->     
     </main>
 
-    <footer class="footer">
+    <footer class="footer section--primary">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
@@ -126,14 +126,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i
-                                class="ri-instagram-line footer__icon"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i
-                                class="ri-tiktok-line footer__icon"></i></a></li>
-                    <li><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i
-                                class="ri-facebook-line footer__icon"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i
-                                class="ri-whatsapp-line footer__icon"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">
@@ -141,10 +137,8 @@
                 <li><a href="#" title="">Prolítica de Privacidad</a></li>
                 <li><a href="#" title="">Política de Cookies</a></li>
             </ul>
-            <p class="footer__copyright">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas
-                intenciones.</p>
+            <p class="footer__copyright feature">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
         </div>
     </footer>
 </body>
-
 </html>

@@ -41,35 +41,36 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__logo__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
                 </picture>
-                <p class="h5">inverna</p>
+                <p class="h3">inverna</p>
             </a>
-            <nav id="nav" class="header__nav no-mobile ">
+            <nav id="nav" class="header__nav no-mobile" >
                 <ul class="header__ul">
-                    <li><a href="index.html" title="">Inicio<div class="header__underline"></div></a></li>
-                    <li><a href="cafeteria.html" title="">Cafetería<div class="header__underline"></div></a></li>
-                    <li><a href="shop.html" title="">Tienda<div class="header__underline"></div></a></li>
-                    <li><a href="index.html#visit-us" title="">Visitanos<div class="header__underline"></div></a></li>
+                    <li><a href="index.html" title="">Inicio<span class="header__underline"></span></a></li>
+                    <li><a href="cafeteria.html" title="">Cafetería<span class="header__underline"></span></a></li>
+                    <li><a href="shop.html" title="">Tienda<span class="header__underline"></span></a></li>
+                    <li><a href="index.html#visit-us" title="">Visitanos<span class="header__underline"></span></a></li>
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" title="">
+                <button id="cart-open" class="header__icon">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <span class="header__cart__count" id="header__cart__count"></span>
+                    <p class="header__cart__count" id="header__cart__count"></p>
                 </button>
-                <button id="menu-toggle" class="no-desktop" title="">
+                <button id="menu-toggle" class="header__icon no-desktop">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
                 </button>
             </div>
+        </div>
     </header>
 
     <main>
         <!-- Hero -->
-        <section class="hero--alternate section">
+        <section class="hero--alternate section section--primary">
             <div class="hero__block--alternate block">
                 <button class="eyebrow--text" id="btn__back"><i class="ri-arrow-left-long-line"></i> Volver</button>
                 <h1 class="h2">Finalizar pedido</h1>
@@ -78,15 +79,21 @@
         <!-- Hero -->
 
         <!-- Checkout -->
-        <section class="checkout section">
+        <section class="checkout section section--light">
             <div class="checkout__block block">
                 <form class="checkout__form" action="#" method="GET">
                     <div class="checkout__data">
                         <h2 class="h3">Tus datos</h2>
                         <div class="checkout__container">
-                            <div class="checkout__form-field">
-                                <label class="checkout__form__label " for="name">NOMBRE COMPLETO</label>
-                                <input id="name" type="text" placeholder="Tu nombre" name="name" required>
+                            <div class="checkout__form__row">
+                                <div class="checkout__form-field">
+                                    <label class="checkout__form__label " for="name">NOMBRE</label>
+                                    <input id="name" type="text" placeholder="Nombre(s)" name="name" required>
+                                </div>
+                                <div class="checkout__form-field">
+                                    <label class="checkout__form__label " for="surname">APELLIDO</label>
+                                    <input id="surname" type="text" placeholder="Appellido(s)" name="surname" required>
+                                </div>
                             </div>
                             <div class="checkout__form-field">
                                 <label class="checkout__form__label " for="phone">TELÉFONO</label>
@@ -98,53 +105,81 @@
                             </div>
                         </div>
                         <h2 class="h3">Tipo de entrega</h2>
+                        <ul class="checkout__delivery-tabs">
+                            <li class="checkout__delivery-tab body selected"><i class="ri-map-pin-line"></i> Retiro en tienda</li>
+                            <li class="checkout__delivery-tab body"><i class="ri-home-4-line"></i> A domicilio</li>
+                        </ul>
                         <div class="checkout__container">
-                            <ul class="checkout__selector">
-                                <p class="selector__option selected"><i class="ri-map-pin-line"></i> Retiro en tienda</p>
-                                <p class="selector__option"><i class="ri-home-4-line"></i> A domicilio</p>
-                            </ul>
-                            <div class="checkout__selector__option">
+                            <div class="checkout__delivery-content selected">
                                 <p class="checkout__form__label body">SELECCIONA TU SEDE</p>
-                                <div class="pickup__container selected">
-                                    <div class="pickup__text">
-                                        <div>
-                                            <h3 class="h5">Centro Histórico</h3>
-                                            <p class="link">Jirón Junín 444</p>
+                                <div class="checkout__radio-field">
+                                    <input type="radio" id="centro-historico" name="delivery-shop" value="centro-historico" class="checkout__radio-input">
+                                    <label class="checkout__radio-label selected" for="centro-historico">
+                                        <div class="checkout__radio-info">
+                                            <div>
+                                                <h3 class="h5">Centro Histórico</h3>
+                                                <p class="body">Jirón Junín 444</p>
+                                            </div>
+                                            <div class="pickup__text">
+                                                <i class="ri-time-line"></i>
+                                                <p class="body">Lun – Sab: 9:30 am – 8:00 pm</p>
+                                            </div>
+                                            <div class="pickup__text">
+                                                <i class="ri-phone-line"></i>
+                                                <p class="body">+51 952 887 408</p>
+                                            </div>
                                         </div>
-                                        <div class="visit__text__detail">
-                                            <i class="ri-time-line"></i>
-                                            <p class="link">Lun – Sab: 9:30 am – 8:00 pm</p>
-                                        </div>
-                                        <div class="visit__text__detail">
-                                            <i class="ri-phone-line"></i>
-                                            <a href="tel:+51 952887408" title="">+51 952 887 408</a>
-                                        </div>
-                                    </div>
-                                    <span class="checkout__checkbox"><span class="inner"></span></span>
+                                        <span class="checkout__radio-circle"><span class="inner"></span></span>
+                                    </label>
                                 </div>
-                                <div class="pickup__container">
-                                    <div class="pickup__text">
-                                        <div>
-                                            <h3 class="h5">Las Praderas del Golf</h3>
-                                            <p class="link">Av. Prol. Cesar Vallejo D54</p>
+                                <div class="checkout__radio-field">
+                                    <input type="radio" id="el-golf" name="delivery-shop" value="el-golf" class="checkout__radio-input">
+                                    <label class="checkout__radio-label" for="el-golf">
+                                        <div class="checkout__radio-info">
+                                            <div>
+                                                <h3 class="h5">Centro Histórico</h3>
+                                                <p class="body">Jirón Junín 444</p>
+                                            </div>
+                                            <div class="pickup__text">
+                                                <i class="ri-time-line"></i>
+                                                <p class="body">Lun – Sab: 9:30 am – 8:00 pm</p>
+                                            </div>
+                                            <div class="pickup__text">
+                                                <i class="ri-phone-line"></i>
+                                                <p class="body">+51 952 887 408</p>
+                                            </div>
                                         </div>
-                                        <div class="visit__text__detail">
-                                            <i class="ri-time-line"></i>
-                                            <p class="link">Lun – Sab: 9:30 am – 9:00 pm</p>
-                                        </div>
-                                        <div class="visit__text__detail">
-                                            <i class="ri-phone-line"></i>
-                                            <a href="tel:+51 992842415" title="">+51 992 842 415</a>
-                                        </div>
-                                    </div>
-                                    <span class="checkout__checkbox"><span class="inner"></span></span>
+                                        <span class="checkout__radio-circle"><span class="inner"></span></span>
+                                    </label>
                                 </div>
                             </div>
-                            <div class="checkout__selector__option checkout__hidden">
+                            <div class="checkout__delivery-content">
                                 <div class="checkout__form-field">
                                     <label class="checkout__form__label" for="address">DIRECCION DE ENTREGA</label>
-                                    <textarea class="checkout___form__message" id="address" type="text"
-                                        placeholder="Calle, numero, referencia" name="address"></textarea>
+                                    <input id="address" type="text" placeholder="Calle, numero, referencia" name="address">
+                                </div>
+                                <div class="checkout__form__row">
+                                    <div class="checkout__form-field">
+                                        <label class="checkout__form__label" for="postcode">CODIGO POSTAL</label>
+                                        <input id="postcode" type="text" placeholder="00000" name="postcode">
+                                    </div>
+                                    <div class="checkout__form-field">
+                                        <label class="checkout__form__label" for="district">DISTRITO</label>
+                                        <select name="district" id="district">
+                                            <option value="Trujillo">Trujillo</option>
+                                            <option value="Alto Trujillo">Alto Trujillo</option>
+                                            <option value="El Porvenir">El Porvenir</option>
+                                            <option value="Florencia de Mora">Florencia de Mora</option>
+                                            <option value="Huanchaco">Huanchaco</option>
+                                            <option value="La Esperanza">La Esperanza</option>
+                                            <option value="Laredo">Laredo</option>
+                                            <option value="Moche">Moche</option>
+                                            <option value="Poroto">Poroto</option>
+                                            <option value="Salaverry">Salaverry</option>
+                                            <option value="Simbal">Simbal</option>
+                                            <option value="Víctor Larco Herrera">Víctor Larco Herrera</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +189,7 @@
                         <ul class="checkout__cart__container" id="checkout__cart__container">
                         </ul>
                         <div class="checkout__finish">
-                            <div class="cart__total">
+                            <div class="checkout__total">
                                 <p>Total</p>
                                 <h4 id="checkout__cart__price"></h4>
                             </div>
@@ -166,20 +201,20 @@
         </section>
         <!-- Checkout -->
 
-        <!-- Shopping Cart -->
-        <section class="cart" id="cart">
-        </section>
-        <!-- Shopping Cart -->
-
         <!-- Scroller -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i
                     class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
+         
+        <!-- Shopping Cart -->
+        <section class="cart" id="cart">
+        </section>
+        <!-- Shopping Cart -->
     </main>
 
-    <footer class="footer">
+    <footer class="footer section--primary">
         <div class="footer__block block">
             <div class="footer__container">
                 <div class="footer__logo">
@@ -190,14 +225,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i
-                                class="ri-instagram-line footer__icon"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i
-                                class="ri-tiktok-line footer__icon"></i></a></li>
-                    <li><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i
-                                class="ri-facebook-line footer__icon"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i
-                                class="ri-whatsapp-line footer__icon"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">
@@ -205,8 +236,7 @@
                 <li><a href="#" title="">Prolítica de Privacidad</a></li>
                 <li><a href="#" title="">Política de Cookies</a></li>
             </ul>
-            <p class="footer__copyright">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas
-                intenciones.</p>
+            <p class="footer__copyright feature">© 2026 Inverna. Todos los derechos reservados. Hecho con amor y buenas intenciones.</p>
         </div>
     </footer>
 </body>

@@ -4,21 +4,22 @@ const header = document.getElementById("header")
 const scroller = document.getElementById("scroller")
 const menuToggle = document.getElementById("menu-toggle")
 const nav = document.getElementById("nav")
+const heroImage = document.getElementById("hero__image")
+const heroSource = document.getElementById("hero__source")
 
 const cartCount = document.getElementById("header__cart__count")
 const cartOpen = document.getElementById("cart-open")
 const cart = document.getElementById("cart")
-
-const heroImage = document.getElementById("hero__image")
-const heroSource = document.getElementById("hero__source")
 const popup = document.getElementById("popup")
 
-const btnAll = document.getElementById("btn__all")
-const btnBreakfast = document.getElementById("btn__breakfast")
-const btnSnacks = document.getElementById("btn__snacks")
-const btnSuperfoods = document.getElementById("btn__superfoods")
-const btnBaking = document.getElementById("btn__baking")
-const btnPantry = document.getElementById("btn__pantry")
+const btnFilter = document.querySelectorAll(".btn--filter")
+
+const btnBack = document.getElementById("btn__back")
+const checkoutCart = document.getElementById("checkout__cart__container")
+const checkoutPrice = document.getElementById("checkout__cart__price")
+const checkoutDelivery = document.querySelectorAll(".checkout__delivery-tab")
+const checkoutOption = document.querySelectorAll(".checkout__delivery-content")
+const checkoutPickup = document.querySelectorAll(".checkout__radio-label")
 
 const gallery = [
     "media/store",
@@ -27,17 +28,54 @@ const gallery = [
     "media/products",
     "media/store-front",
 ]
-let index = 0
+
+let indexGallery = 0
 let shopping__cart = JSON.parse(localStorage.getItem("shopping__cart")) || []
-          
+
+const updateCartCheckout = () => {
+    if (checkoutCart) {
+        checkoutCart.innerHTML = ""
+    }
+
+    const totalCheckout = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
+    if (checkoutPrice) {
+        checkoutPrice.innerHTML = `${totalCheckout.toFixed(2)} €`
+    }
+
+    shopping__cart.forEach((cartProduct) => {
+        const createItem = document.createElement('li')
+        createItem.classList.add('checkout__cart__item')
+        createItem.innerHTML = `
+            <picture>
+                <source srcset="media/shop/${cartProduct.img}.webp" type="image/webp">
+                <img class="checkout__cart__item__img" src="media/shop/${cartProduct.img}.jpg" alt="" loading="lazy">
+            </picture>
+            <div class="checkout__cart__item__description">
+                <div>
+                    <h3 class="body">${cartProduct.name}</h3>
+                    <div class="checkout__cart__item__container">
+                        <p class="feature">${cartProduct.quantity}</p>
+                        <p class="feature">x</p>
+                        <p class="feature">${cartProduct.unit}</p>
+                    </div>
+                </div>
+                <p class="no-wrap body">${(cartProduct.quantity * cartProduct.price).toFixed(2)} €</p>
+            </div>
+        `
+        if (checkoutCart) {
+            checkoutCart.appendChild(createItem)
+        }
+    })
+}
+
 function rotateHero(start) {
     if (heroImage) {
         heroImage.style.opacity = "0"
         setTimeout(() => {
-            index++
-            index >= gallery.length ? index = 0 : ''
-            heroImage.src = `${gallery[index]}.jpg`
-            heroSource.srcset = `${gallery[index]}.webp`
+            indexGallery++
+            indexGallery >= gallery.length ? indexGallery = 0 : ''
+            heroImage.src = `${gallery[indexGallery]}.jpg`
+            heroSource.srcset = `${gallery[indexGallery]}.webp`
             setTimeout(() => {
                 heroImage.style.opacity = "1"
             }, 150)
@@ -48,18 +86,33 @@ function rotateHero(start) {
 function toggleMenu() {
     nav.classList.toggle("no-mobile")
     nav.classList.toggle("header__nav--open")
-    menuToggle.classList.toggle("menu--opened")
-    header.classList.toggle("header--opened")
+    menuToggle.classList.toggle("menu--open")
+    header.classList.toggle("header--open")
+}
+
+function updateCartCount() {
+    if (shopping__cart.length == 0) {
+        cartCount.style.display = "none"
+    } else {
+        cartCount.style.display = "block"
+        cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
+    }
 }
 
 function closePopup() {
-    popup.classList.remove("popup__active")
+    popup.classList.remove("popup--open")
+    popup.classList.add("popup--close")
+    setTimeout(() => {
+        popup.classList.remove("popup--close")
+    }, 300)
 }
 
 setInterval(rotateHero, 3000)
+updateCartCount()
+updateCartCheckout()
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY < 80) {
+    if (window.scrollY < 65) {
         scroller.classList.add("scroller-hero")
         header.classList.add("header--hero")
     } else {
@@ -76,6 +129,41 @@ if (popup) {
     })
 }
 
+btnFilter.forEach((eachBtn, i) => {
+    btnFilter[i].addEventListener("click", () => {
+        btnFilter.forEach((eachBtn, i) => {
+            btnFilter[i].classList.remove("selected")
+        })
+        btnFilter[i].classList.add("selected")
+    })
+})
+
+if (btnBack) {
+    btnBack.addEventListener("click", () => {
+        window.history.back()
+    })
+}
+
+checkoutDelivery.forEach((eachTitle, i) => {
+    checkoutDelivery[i].addEventListener("click", () => {
+        checkoutDelivery.forEach((eachTitle, i) => {
+            checkoutDelivery[i].classList.remove("selected")
+            checkoutOption[i].classList.remove("selected")
+        })
+        checkoutDelivery[i].classList.add("selected")
+        checkoutOption[i].classList.add("selected")
+    })
+})
+
+checkoutPickup.forEach((eachTitle, i) => {
+    checkoutPickup[i].addEventListener("click", () => {
+        checkoutPickup.forEach((eachTitle, i) => {
+            checkoutPickup[i].classList.remove("selected")
+        })
+        checkoutPickup[i].classList.add("selected")
+    })
+})
+
 // Fetch shopping cart
 fetch("components/cart.html")
 .then(response => response.text())
@@ -88,22 +176,17 @@ fetch("components/cart.html")
     const cartPrice = document.getElementById("cart__price")
 
     function openCart() {
-        cart.classList.add("cart__opened")
-        updateCartUI()
+        cart.classList.add("cart--open")
+        updateCartList()
     }
 
     function closeCart() {
-        cart.classList.remove("cart__opened")
-        cart.classList.add("cart__closed")
+        cart.classList.remove("cart--open")
+        cart.classList.add("cart--close")
         setTimeout(() => {
-            cart.classList.remove("cart__closed")
+            cart.classList.remove("cart--close")
         }, 300)
-        if (shopping__cart.length == 0) {
-            cartCount.style.display = "none"
-        } else {
-            cartCount.style.display = "block"
-            cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
-        }
+        updateCartCount()
         updateCartCheckout()
     }
 
@@ -114,11 +197,11 @@ fetch("components/cart.html")
     })
 
 
-    const updateCartUI = () => {
+    const updateCartList = () => {
         cartFull.innerHTML = ""
 
-        const total = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
-        cartPrice.innerHTML = `${total.toFixed(2)} €`
+        const totalCart = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
+        cartPrice.innerHTML = `${totalCart.toFixed(2)} €`
 
         if (shopping__cart.length == 0) {
             cartEmpty.style.display = "flex"
@@ -140,16 +223,18 @@ fetch("components/cart.html")
                     <img class="cart__item__img" src="media/shop/${cartProduct.img}.jpg" alt="" loading="lazy">
                 </picture>
                 <div class="cart__item__description">
-                    <h3>${cartProduct.name}</h3>
-                    <p>${cartProduct.unit}</p>
+                    <div>
+                        <h3>${cartProduct.name}</h3>
+                        <p class="feature">${cartProduct.unit}</p>
+                    </div>
                     <div class="cart__item__container">
                         <div class="cart__item__input">
                             <button class="product__minus"><i class="ri-subtract-line"></i></button>
-                            <p>${cartProduct.quantity}</p>
+                            <p class="feature">${cartProduct.quantity}</p>
                             <button class="product__add"><i class="ri-add-line"></i></button>
                         </div>
                         <div class="cart__item__price">
-                            <p>${cartProduct.quantity * cartProduct.price} €</p>
+                            <p class="body">${(cartProduct.quantity * cartProduct.price).toFixed(2)} €</p>
                             <button class="cart__item__delete"><i class="ri-close-large-line"></i></button>
                         </div>
                     </div>
@@ -163,13 +248,13 @@ fetch("components/cart.html")
                 if (currentIndex !== -1) {
                     shopping__cart.splice(currentIndex, 1)
                 }
-                updateCartUI()
+                updateCartList()
             })
 
             const productAdd = createItem.querySelector('.product__add')
             productAdd.addEventListener('click', () => {
                 cartProduct.quantity++
-                updateCartUI()
+                updateCartList()
             })
 
             const productMinus = createItem.querySelector('.product__minus')
@@ -179,14 +264,13 @@ fetch("components/cart.html")
                     const currentIndex = shopping__cart.findIndex(item => item.id === cartProduct.id)
                     if (currentIndex !== -1) shopping__cart.splice(currentIndex, 1)
                 }
-                updateCartUI()
+                updateCartList()
             })
             localStorage.setItem("shopping__cart", JSON.stringify(shopping__cart))
         })
     }
 })
 .catch(error => console.error(error))
-
 
 // Fetch shop products
 fetch("components/shop.json")
@@ -196,68 +280,46 @@ fetch("components/shop.json")
         const productsToShow = data.filter(data => data.category === category)
         displayProducts(productsToShow)
     }
-
-    btnAll.addEventListener("click", () => {
-        displayProducts(data)
-    })
-
-    btnBreakfast.addEventListener("click", () => {
-        filterProducts("Desayunos")
-    })
-
-    btnSnacks.addEventListener("click", () => {
-        filterProducts("Snacks")
-    })
-
-    btnSuperfoods.addEventListener("click", () => {
-        filterProducts("Superfoods")
-    })
-
-    btnBaking.addEventListener("click", () => {
-        filterProducts("Repostería")
-    })
-
-    btnPantry.addEventListener("click", () => {
-        filterProducts("Despensa")
-    })
-
+    
     const displayProducts = (productsToShow) => {
         const shopContainer = document.getElementById("shop__container")
 
-        shopContainer.innerHTML = ""
+        if (shopContainer) {
+            shopContainer.innerHTML = ""
+        }
 
         productsToShow.forEach((product) => {
             const createProduct = document.createElement('li')
-            createProduct.classList.add('shop__item')
+            createProduct.classList.add('shop__product')
             createProduct.innerHTML = `
-                <div class="item__top">
-                    <div class="item__img">
+                <div class="shop__product__top">
+                    <div class="shop__product__img">
                         <picture>
                             <source srcset="media/shop/${product.img}.webp" type="image/webp">
                             <img class="shop__background" src="media/shop/${product.img}.jpg" alt="store" loading="lazy">
                         </picture>
                     </div>
-                    <div class="item__info">
-                        <div class="item__title">
-                            <h3 class="h4">${product.name}</h3>
-                            <p class="body">${product.unit}</p>
+                    <div class="shop__product__info">
+                        <div class="shop__product__title">
+                            <h2 class="h4">${product.name}</h2>
+                            <p class="body no-wrap">${product.unit}</p>
                         </div>
-                        <p class="body">${product.desc}</p>
-                        <div class="item__features">
-                            <p class="shop__feature feature ${product.features[0]}">${product.tags[0]}</p>
-                            <p class="shop__feature feature ${product.features[1]}">${product.tags[1]}</p>
-                        </div>
-                        
+                        <p class="body shop__product__desc">${product.desc}</p>
+                        <ul class="shop__product__features">
+                            <li class="shop__feature feature ${product.features[0]}">${product.tags[0]}</li>
+                            <li class="shop__feature feature ${product.features[1]}">${product.tags[1]}</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="item__bottom">
-                    <h4>${product.price} €</h4>
-                    <button class="btn btn--green btn-agregar"><i class="ri-add-line"></i>Agregar</button>
+                <div class="shop__product__bottom">
+                    <p class="h4">${product.price} €</p>
+                    <button class="btn btn--green btn-agregar"><i class="ri-add-line"></i> Agregar</button>
                 </div>
             `
-            shopContainer.appendChild(createProduct)
-
-            // Helper function to handle adding to cart (avoids code repetition)
+            if (shopContainer) {
+                shopContainer.appendChild(createProduct)
+            }
+            
             const addToCart = () => {
                 const repeat = shopping__cart.find((repeatProduct) => repeatProduct.id === product.id)
 
@@ -274,29 +336,27 @@ fetch("components/shop.json")
                     })
                 }
                 
-
-                if (shopping__cart.length == 0) {
-                    cartCount.style.display = "none"
-                } else {
-                    cartCount.style.display = "block"
-                    cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
-                }
-                
+                updateCartCount()
                 localStorage.setItem("shopping__cart", JSON.stringify(shopping__cart))
             }
 
-            // 1. FIX: Scope the selector to 'createProduct' instead of 'document'
+            
             const addProductBtn = createProduct.querySelector('.btn-agregar')
             addProductBtn.addEventListener("click", (e) => {
                 e.stopPropagation() // Prevents the card click event from firing when clicking this button
                 addToCart()
+                addProductBtn.style = "background-color: var(--color-green)"
+                addProductBtn.innerHTML = `<i class="ri-check-line"></i> Añadido`
+                setTimeout(() => {
+                    addProductBtn.style = "background-color: var(--color-primary)"
+                    addProductBtn.innerHTML = `<i class="ri-add-line"></i> Agregar`
+                }, 1500)
             })
-
 
             createProduct.addEventListener("click", (e) => {
                 if (e.target.closest('.btn-agregar')) return
 
-                popup.classList.add('popup__active')
+                popup.classList.add('popup--open')
                 popup.innerHTML = `
                     <div class="popup__block" id="popup__block">
                         <div class="popup__img">
@@ -306,28 +366,28 @@ fetch("components/shop.json")
                             </picture>
                         </div>
                         <div class="popup__info">
-                            <div class="eyebrow--container">
-                                <p class="category feature">${product.category}</p>
-                                <p class="shop__feature feature ${product.features[0]}">${product.tags[0]}</p>
-                                <p class="shop__feature feature ${product.features[1]}">${product.tags[1]}</p>
-                            </div>
+                            <ul class="popup__eyebrow">
+                                <li class="category feature">${product.category}</li>
+                                <li class="shop__feature feature ${product.features[0]}">${product.tags[0]}</li>
+                                <li class="shop__feature feature ${product.features[1]}">${product.tags[1]}</li>
+                            </ul>
                             <div class="popup__title">
-                                <h3>${product.name}</h3>
+                                <h2 class="h3">${product.name}</h2>
                                 <p class="feature">${product.unit}</p>
                             </div>
                             <p class="body">${product.detail}</p>
                             <div class="popup__benefits">
-                                <p class="body"><i class="ri-flashlight-line"></i> BENEFICIOS</p>
+                                <h3 class="body"><i class="ri-flashlight-line"></i> BENEFICIOS</h3>
                                 <ul class="popup__benefits__container">
-                                    <li><i class="ri-shield-check-line"></i>${product.benefits[0]}</li>
-                                    <li><i class="ri-shield-check-line"></i>${product.benefits[1]}</li>
-                                    <li><i class="ri-shield-check-line"></i>${product.benefits[2]}</li>
+                                    <li class="body"><i class="ri-shield-check-line"></i> ${product.benefits[0]}</li>
+                                    <li class="body"><i class="ri-shield-check-line"></i> ${product.benefits[1]}</li>
+                                    <li class="body"><i class="ri-shield-check-line"></i> ${product.benefits[2]}</li>
                                 </ul>
                             </div>
-                            <h5><i class="ri-leaf-line"></i> Ingredientes</h5>
+                            <h4 class="h5"><i class="ri-leaf-line"></i> Ingredientes</h4>
                             <p class="body">${product.ingredients}</p>
                             <div class="popup__bottom">
-                                <h4>${product.price} €</h4>
+                                <p class="h4">${product.price} €</p>
                                 <button class="btn btn--green btn-agregar-popup"><i class="ri-add-line"></i>Agregar al carrito</button>
                             </div>
                             <button id="popup-close">
@@ -345,107 +405,33 @@ fetch("components/shop.json")
 
                 const popupAddBtn = popup.querySelector('.btn-agregar-popup')
                 if (popupAddBtn) {
-                    popupAddBtn.addEventListener("click", addToCart)
+                    popupAddBtn.addEventListener("click", () => {
+                        addToCart()
+                        popupAddBtn.style = "background-color: var(--color-green)"
+                        popupAddBtn.innerHTML = `<i class="ri-check-line"></i> Añadido al carrito`
+                        setTimeout(() => {
+                            popupAddBtn.style = "background-color: var(--color-primary)"
+                            popupAddBtn.innerHTML = `<i class="ri-add-line"></i> Agregar al carrito`
+                        }, 1500)
+                    })
                 }
                 
             })
         })
     }
+
+    btnFilter.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            
+            if (category === "Todos") {
+                displayProducts(data);
+            } else {
+                filterProducts(category);
+            }
+        });
+    });
+
     displayProducts(data)
 })
 .catch(error => console.error(error))
-
-
-if (shopping__cart.length == 0) {
-    cartCount.style.display = "none"
-} else {
-    cartCount.style.display = "block"
-    cartCount.innerText = shopping__cart.reduce((acc, e) => acc + e.quantity, 0)
-}
-
-
-const ayuda = document.getElementById("checkout__cart__container")
-const otro = document.getElementById("checkout__cart__price")
-const updateCartCheckout = () => {
-    ayuda.innerHTML = ""
-
-    const total2 = shopping__cart.reduce((acc, e) => acc + e.price * e.quantity, 0)
-    otro.innerHTML = `${total2.toFixed(2)} €`
-
-    shopping__cart.forEach((cartProduct) => {
-        const createItem = document.createElement('li')
-        createItem.classList.add('cart__item')
-        createItem.innerHTML = `
-            <picture>
-                <source srcset="media/shop/${cartProduct.img}.webp" type="image/webp">
-                <img class="cart__item__img" src="media/shop/${cartProduct.img}.jpg" alt="" loading="lazy">
-            </picture>
-            <div class="cart__item__description">
-                <div>
-                    <h3>${cartProduct.name}</h3>
-                    <div class="cart__item__container">
-                        <p>${cartProduct.quantity}</p>
-                        <p>x</p>
-                        <p>${cartProduct.unit}</p>
-                    </div>
-                </div>
-                <p class="cart__item__price">${cartProduct.quantity * cartProduct.price} €</p>
-            </div>
-        `
-        ayuda.appendChild(createItem)
-
-    })
-}
-
-updateCartCheckout()
-
-
-
-
-const btnFilter = document.querySelectorAll(".btn--filter")
-
-btnFilter.forEach((eachBtn, i) => {
-    btnFilter[i].addEventListener("click", () => {
-        btnFilter.forEach((eachBtn, i) => {
-            btnFilter[i].classList.remove("selected")
-        })
-        btnFilter[i].classList.add("selected")
-    })
-})
-
-
-const checkoutSelector = document.querySelectorAll(".selector__option")
-const checkoutOption = document.querySelectorAll(".checkout__selector__option")
-
-checkoutSelector.forEach((eachTitle, i) => {
-    checkoutSelector[i].addEventListener("click", () => {
-        checkoutSelector.forEach((eachTitle, i) => {
-            checkoutSelector[i].classList.remove("selected")
-            checkoutOption[i].classList.add("checkout__hidden")
-        })
-        checkoutSelector[i].classList.add("selected")
-        checkoutOption[i].classList.remove("checkout__hidden")
-    })
-})
-
-
-const checkoutPickup = document.querySelectorAll(".pickup__container")
-
-checkoutPickup.forEach((eachTitle, i) => {
-    checkoutPickup[i].addEventListener("click", () => {
-        checkoutPickup.forEach((eachTitle, i) => {
-            checkoutPickup[i].classList.remove("selected")
-        })
-        checkoutPickup[i].classList.add("selected")
-    })
-})
-
-
-
-
-const btnBack = document.getElementById("btn__back")
-if (btnBack) {
-    btnBack.addEventListener("click", () => {
-        window.history.back()
-    })
-}
