@@ -1,3 +1,12 @@
+<!-- 
+Esta es la página de checkout de la tienda, estructura general:
+- Encabezado
+- Barra de navegación
+- Hero
+- Formulario de compras y resumen de carrito
+- Carrito de compras
+- Pie de página
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,7 +50,7 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo" loading="lazy">
                 </picture>
                 <p class="h3">inverna</p>
             </a>
@@ -54,12 +63,12 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" class="header__icon">
+                <button id="cart-open" class="header__icon" title="">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <p class="header__cart__count" id="header__cart__count"></p>
+                    <span class="header__cart__count" id="header__cart__count"></span>
                 </button>
-                <button id="menu-toggle" class="header__icon no-desktop">
+                <button id="menu-toggle" class="header__icon no-desktop" title="">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -69,22 +78,23 @@
     </header>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero - Contiene información de la página y boton de retroceso -->
         <section class="hero--alternate section section--primary">
             <div class="hero__block--alternate block">
-                <button class="eyebrow--text" id="btn__back"><i class="ri-arrow-left-long-line"></i> Volver</button>
+                <button class="eyebrow--text" id="btn__back" title=""><i class="ri-arrow-left-long-line"></i> Volver</button>
                 <h1 class="h2">Finalizar pedido</h1>
             </div>
         </section>
         <!-- Hero -->
 
-        <!-- Checkout -->
+        <!-- Checkout - Formulario de datos y tipo de entrega con resumen del carrrito de compras -->
         <section class="checkout section section--light">
             <div class="checkout__block block">
                 <form class="checkout__form" action="#" method="GET">
                     <div class="checkout__data">
                         <h2 class="h3">Tus datos</h2>
                         <div class="checkout__container">
+                        <!-- Todos los datos son requeridos para enviar el formulario -->
                             <div class="checkout__form__row">
                                 <div class="checkout__form-field">
                                     <label class="checkout__form__label " for="name">NOMBRE</label>
@@ -106,10 +116,12 @@
                         </div>
                         <h2 class="h3">Tipo de entrega</h2>
                         <ul class="checkout__delivery-tabs">
+                        <!-- Selector de tipo de entrega de productos -->
                             <li class="checkout__delivery-tab body selected"><i class="ri-map-pin-line"></i> Retiro en tienda</li>
                             <li class="checkout__delivery-tab body"><i class="ri-home-4-line"></i> A domicilio</li>
                         </ul>
                         <div class="checkout__container">
+                            <!-- Opcion de recojo en tienda con selector de sede -->
                             <div class="checkout__delivery-content selected">
                                 <p class="checkout__form__label body">SELECCIONA TU SEDE</p>
                                 <div class="checkout__radio-field">
@@ -154,6 +166,7 @@
                                 </div>
                             </div>
                             <div class="checkout__delivery-content">
+                                <!-- Opscion de envio a domicilio -->
                                 <div class="checkout__form-field">
                                     <label class="checkout__form__label" for="address">DIRECCION DE ENTREGA</label>
                                     <input id="address" type="text" placeholder="Calle, numero, referencia" name="address">
@@ -185,15 +198,16 @@
                         </div>
                     </div>
                     <div class="checkout__cart">
+                        <!-- Resumen del carrito de compras -->
                         <h2 class="h3">Tu pedido</h2>
                         <ul class="checkout__cart__container" id="checkout__cart__container">
                         </ul>
                         <div class="checkout__finish">
                             <div class="checkout__total">
                                 <p>Total</p>
-                                <h4 id="checkout__cart__price"></h4>
+                                <h3 class="h4" id="checkout__cart__price"></h3>
                             </div>
-                            <button type="submit">Pagar y finalizar compra</button>
+                            <button type="submit" title="">Pagar y finalizar compra</button>
                         </div>
                     </div>
                 </form>
@@ -201,14 +215,13 @@
         </section>
         <!-- Checkout -->
 
-        <!-- Scroller -->
+        <!-- Scroller - Redirecciona al incio de la página -->
         <div class="scroller">
-            <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i
-                    class="ri-arrow-up-line"></i></a>
+            <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
          
-        <!-- Shopping Cart -->
+        <!-- Shopping Cart - Contiene los productos seleccionados de la tienda -->
         <section class="cart" id="cart">
         </section>
         <!-- Shopping Cart -->
@@ -225,10 +238,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title="" rel="noreferrer"><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="" rel="noreferrer"><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">
@@ -240,5 +253,4 @@
         </div>
     </footer>
 </body>
-
 </html>

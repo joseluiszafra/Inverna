@@ -1,3 +1,12 @@
+<!-- 
+Esta es la página de la cafeteria, estructura general:
+- Encabezado
+- Barra de navegación
+- Hero
+- Lista de productos
+- Carrito de compras
+- Pie de página
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,7 +50,7 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo" loading="lazy">
                 </picture>
                 <p class="h3">inverna</p>
             </a>
@@ -54,12 +63,12 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" class="header__icon">
+                <button id="cart-open" class="header__icon" title="">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <p class="header__cart__count" id="header__cart__count"></p>
+                    <span class="header__cart__count" id="header__cart__count"></span>
                 </button>
-                <button id="menu-toggle" class="header__icon no-desktop">
+                <button id="menu-toggle" class="header__icon no-desktop" title="">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -69,7 +78,7 @@
     </header>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero - Contiene información de la página -->
         <section class="hero--alternate section section--primary ">
             <div class="hero__block--alternate block">
                 <h1 class="eyebrow--text">Productos</h1>
@@ -81,16 +90,17 @@
         </section>
         <!-- Hero -->
 
-        <!-- shop -->
+        <!-- Shop - Lista de productos de la tienda con un selector para filtar por categorías -->
         <section class="shop section section--light">
             <div class="shop__block block">
                 <div class="shop__filter">
-                    <button class="btn btn--filter selected" data-category="Todos">Todo</button>
-                    <button class="btn btn--filter" data-category="Desayunos">Desayunos</button>
-                    <button class="btn btn--filter" data-category="Snacks">Snacks</button>
-                    <button class="btn btn--filter" data-category="Superfoods">Superfoods</button>
-                    <button class="btn btn--filter" data-category="Repostería">Repostería</button>
-                    <button class="btn btn--filter" data-category="Despensa">Despensa</button>
+                <!-- Filtro de productos por categorias -->
+                    <button class="btn btn--filter selected" data-category="Todos" title="">Todo</button>
+                    <button class="btn btn--filter" data-category="Desayunos" title="">Desayunos</button>
+                    <button class="btn btn--filter" data-category="Snacks" title="">Snacks</button>
+                    <button class="btn btn--filter" data-category="Superfoods" title="">Superfoods</button>
+                    <button class="btn btn--filter" data-category="Repostería" title="">Repostería</button>
+                    <button class="btn btn--filter" data-category="Despensa" title="">Despensa</button>
                 </div>
                 <ul class="shop__container" id="shop__container">
                 </ul>
@@ -98,18 +108,18 @@
         </section>
         <!-- shop -->
 
-        <!-- Scroller -->
+        <!-- Scroller - Redirecciona al incio de la página -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
 
-        <!-- pop up -->
+        <!-- Pop up - Pop up con informacion mas detallada de cada producto -->
         <section class="popup section" id="popup">
         </section>
-        <!-- pop up -->
+        <!-- Pop up -->
 
-        <!-- Shopping Cart -->
+        <!-- Shopping Cart - Contiene los productos seleccionados de la tienda -->
         <section class="cart" id="cart">
         </section>
         <!-- Shopping Cart -->     
@@ -126,10 +136,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title="" rel="noreferrer"><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="" rel="noreferrer"><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">

@@ -1,3 +1,15 @@
+<!-- 
+Esta es la página de la cafeteria, estructura general:
+- Encabezado
+- Barra de navegación
+- Hero
+- Información de la cafetería
+- Galeria de imágenes
+- Menu de platos
+- Comentarios de clientes
+- Carrito de compras
+- Pie de página
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,7 +48,7 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo" loading="lazy">
                 </picture>
                 <p class="h3">inverna</p>
             </a>
@@ -49,12 +61,12 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" class="header__icon">
+                <button id="cart-open" class="header__icon" title="">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <p class="header__cart__count" id="header__cart__count"></p>
+                    <span class="header__cart__count" id="header__cart__count"></span>
                 </button>
-                <button id="menu-toggle" class="header__icon no-desktop">
+                <button id="menu-toggle" class="header__icon no-desktop" title="">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -64,7 +76,7 @@
     </header>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero - Contiene información de la página -->
         <section class="hero--alternate section section--primary ">
             <div class="hero__block--alternate block">
                 <h1 class="eyebrow--text">Un espacio para ti</h1>
@@ -76,7 +88,7 @@
         </section>
         <!-- Hero -->
          
-        <!-- Info -->
+        <!-- Info - Horario de atención y tipo de platos que venden -->
         <section class="info section section--yellow">
             <div class="info__block block">
                 <p class="body"><i class="ri-time-line"></i> Lun – Sáb: 9:30 am – 8:00 pm</p>
@@ -86,9 +98,10 @@
         </section>
         <!-- Info -->
 
-        <!-- Gallery -->
+        <!-- Gallery - Galeria de imagenes de los platos -->
         <section class="gallery section section--light">
             <div class="gallery__block block">
+                <h2 class="hidden">Nuestros platos</h2>
                 <div class="large">
                     <picture>
                         <source srcset="media/cafeteria/table.webp" type="image/webp">
@@ -111,7 +124,7 @@
         </section>
         <!-- Gallery -->
 
-        <!-- Menu -->
+        <!-- Menu - Menú de la cafetería -->
         <section class="menu section section--light">
             <div class="menu__block block">
                 <h2 class="eyebrow--text">MENÚ COMPLETO</h2>
@@ -300,7 +313,7 @@
         </section>
         <!-- Menu -->
         
-        <!-- Reviews -->
+        <!-- Reviews - Reseñas de los clientes -->
         <section class="reviews section section--light">
             <div class="reviews__block block">
                 <div class="reviews__card">
@@ -318,13 +331,13 @@
         </section>
         <!-- Reviews -->
 
-        <!-- Scroller -->
+        <!-- Scroller - Redirecciona al incio de la página -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
 
-        <!-- Shopping Cart -->
+        <!-- Shopping Cart - Contiene los productos seleccionados de la tienda -->
         <section class="cart" id="cart">
         </section>
         <!-- Shopping Cart -->
@@ -341,10 +354,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title="" rel="noreferrer"><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="" rel="noreferrer"><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">

@@ -1,3 +1,17 @@
+<!-- 
+Esta es la página principal de la web, estructura general:
+- Encabezado
+- Barra de navegación
+- Hero
+- Hístoria
+- Características
+- Espacios
+- Testimonios de clientes
+- Formulario de contacto
+- Mapas de sedes
+- Carrito de compras
+- Pie de página
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,7 +50,7 @@
             <a href="index.html" class="header__logo" title="">
                 <picture>
                     <source srcset="media/logo-light-circular.webp" type="image/webp">
-                    <img src="media/logo-light-circular.png" class="header__img" alt="logo">
+                    <img src="media/logo-light-circular.png" class="header__img" alt="logo" loading="lazy">
                 </picture>
                 <p class="h3">inverna</p>
             </a>
@@ -49,12 +63,12 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <button id="cart-open" class="header__icon">
+                <button id="cart-open" class="header__icon" title="">
                     <i class="ri-shopping-cart-line"></i>
                     <span class="header__circle"></span>
-                    <p class="header__cart__count" id="header__cart__count"></p>
+                    <span class="header__cart__count" id="header__cart__count"></span>
                 </button>
-                <button id="menu-toggle" class="header__icon no-desktop">
+                <button id="menu-toggle" class="header__icon no-desktop" title="">
                     <i class="ri-menu-fill header__menu--mobile"></i>
                     <i class="ri-close-large-line header__menu--mobile"></i>
                     <span class="header__circle"></span>
@@ -64,7 +78,7 @@
     </header>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero - Contiene información sobre la tienda y botones de dirección al área de cafetería y tienda -->
         <section class="hero section">
             <div class="hero__block">
                 <picture>
@@ -85,7 +99,7 @@
         </section>
         <!-- Hero -->
 
-        <!-- History -->
+        <!-- History - Historia de la tienda -->
         <section class="history section section--light">
             <div class="history__block block">
                 <div class="history__text">
@@ -111,7 +125,7 @@
         </section>
         <!-- History  -->
 
-        <!-- Features -->
+        <!-- Features - Características de los productos vendidos -->
         <section class="features section section--light">
             <div class="features__block block">
                 <div class="features__card">
@@ -141,11 +155,11 @@
         </section>
         <!-- Features -->
 
-        <!-- Spaces -->
+        <!-- Spaces - Descripción del área de cafeteria y del área de tienda, con botones de direccionamiento -->
         <section class="spaces section section--yellow">
             <div class="spaces__block block">
                 <h2 class="eyebrow--text">DOS FORMAS DE DISFRUTAR INVERNA</h2>
-                <h3 class="h2">Nuestros espacios</h3 class="h2">
+                <h3 class="h2">Nuestros espacios</h3>
                 <p class="spaces__description">Ya sea que quieras sentarte a disfrutar o llevar lo mejor a tu hogar,
                     tenemos un espacio para ti.</p>
                 <div class="spaces__cards">
@@ -162,15 +176,11 @@
                                 <li class="spaces__feature feature">Bowls</li>
                                 <li class="spaces__feature feature">Café</li>
                             </ul>
-                            <a href="cafeteria.html" class="btn btn--filled" title="">Ver menú completo<i
-                                    class="ri-arrow-right-long-line"></i></a>
+                            <a href="cafeteria.html" class="btn btn--filled" title="">Ver menú completo<i class="ri-arrow-right-long-line"></i></a>
                         </div>
                         <picture>
-                            <source srcset="media/chococake.webp"
-                                type="image/webp">
-                            <img class="spaces__background"
-                                src="media/chococake.jpg" alt="small cake"
-                                loading=" lazy">
+                            <source srcset="media/chococake.webp" type="image/webp">
+                            <img class="spaces__background" src="media/chococake.jpg" alt="small cake" loading="lazy">
                         </picture>
                     </div>
                     <div class="spaces__card">
@@ -192,7 +202,7 @@
                         </div>
                         <picture>
                             <source srcset="media/basket.webp" type="image/webp">
-                            <img class="spaces__background" src="media/basket.jpg" alt="bread" loading=" lazy">
+                            <img class="spaces__background" src="media/basket.jpg" alt="bread" loading="lazy">
                         </picture>
                     </div>
                 </div>
@@ -200,7 +210,7 @@
         </section>
         <!-- Spaces -->
 
-        <!-- Clients -->
+        <!-- Clients - Testimonios de clientes -->
         <section class="clients section section--primary">
             <div class="clients__block block">
                 <h2 class="eyebrow--text">LO QUE DICEN NUESTROS CLIENTES</h2>
@@ -256,7 +266,7 @@
         </section>
         <!-- Clients -->
 
-        <!-- Contact -->
+        <!-- Contact - Número, correo y formulario de contacto -->
         <section class="contact section section--yellow">
             <div class="contact__block block">
                 <div class="contact__text">
@@ -267,20 +277,21 @@
                         <i class="ri-whatsapp-line contact__link__icon"></i>
                         <div>
                             <p class="feature">Whatsapp</p>
-                            <a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="">+51 952 887 408</a>
+                            <a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="" rel="noreferrer">+51 952 887 408</a>
                         </div>
                     </div>
                     <div class="contact__link">
                         <i class="ri-mail-line contact__link__icon"></i>
                         <div>
                             <p class="feature">Email</p>
-                            <a href="mailto:contacto@inverna.com" target="_blank" title="">contacto@inverna.com</a>
+                            <a href="mailto:contacto@inverna.com" target="_blank" title="" rel="noreferrer">contacto@inverna.com</a>
                         </div>
                     </div>
                 </div>
                 <div class="contact__content">
                     <h2 class="h4">Envíanos un mensaje</h2>
                     <form class="contact__form" action="#" method="GET">
+                        <!-- Todos los elementos input tienen required, por lo que todos deben ser llenados para enviar el formulario -->
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="name">Nombre:</label>
                             <input id="name" type="text" placeholder="Tu nombre" name="name" required>
@@ -291,7 +302,7 @@
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form__label" for="message">Mensaje:</label>
-                            <textarea class="contact__form__message" id="message" type="text" placeholder="¿En que podemos ayudarte?" name="message" required></textarea>
+                            <textarea class="contact__form__message" id="message" placeholder="¿En que podemos ayudarte?" name="message" required></textarea>
                         </div>
                         <div class="contact__form-field">
                             <label class="contact__form-acceptance">
@@ -306,7 +317,7 @@
         </section>
         <!-- Contact -->
 
-        <!-- Visit -->
+        <!-- Visit - Mapas, horarios y números de las sedes -->
         <section class="visit section section--light" id="visit-us">
             <div class="visit__block block">
                 <div class="visit__title">
@@ -333,7 +344,7 @@
                             </div>
                             <div class="visit__text">
                                 <i class="ri-phone-line"></i>
-                                <a href="tel:+51 952887408" title="">+51 952 887 408</a>
+                                <a href="tel:+51952887408" title="">+51 952 887 408</a>
                             </div>
                         </div>
                     </div>
@@ -356,7 +367,7 @@
                             </div>
                             <div class="visit__text">
                                 <i class="ri-phone-line"></i>
-                                <a href="tel:+51 992842415" title="">+51 992 842 415</a>
+                                <a href="tel:+51992842415" title="">+51 992 842 415</a>
                             </div>
                         </div>
                     </div>
@@ -365,17 +376,16 @@
         </section>
         <!-- Visit -->
 
-        <!-- Scroller -->
+        <!-- Scroller - Redirecciona al incio de la página -->
         <div class="scroller">
             <a id="scroller" href="#" class="scroller__block scroller-hero" title=""><i class="ri-arrow-up-line"></i></a>
         </div>
         <!-- Scroller -->
 
-        <!-- Shopping Cart -->
+        <!-- Shopping Cart - Contiene los productos seleccionados de la tienda -->
         <section class="cart" id="cart">  
         </section>
         <!-- Shopping Cart -->
-
     </main>
 
     <footer class="footer section--primary">
@@ -389,10 +399,10 @@
                     <h2 class="h3">iverna</h2>
                 </div>
                 <ul class="footer__social">
-                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title=""><i class="ri-instagram-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title=""><i class="ri-tiktok-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title=""><i class="ri-facebook-line"></i></a></li>
-                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title=""><i class="ri-whatsapp-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.instagram.com/inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-instagram-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.tiktok.com/@inverna_" target="_blank" title="" rel="noreferrer"><i class="ri-tiktok-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://www.facebook.com/inverna.pe" target="_blank" title="" rel="noreferrer"><i class="ri-facebook-line"></i></a></li>
+                    <li class="footer__icon"><a href="https://api.whatsapp.com/send?phone=51952887408#" target="_blank" title="" rel="noreferrer"><i class="ri-whatsapp-line"></i></a></li>
                 </ul>
             </div>
             <ul class="footer__legal">

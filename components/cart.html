@@ -1,3 +1,6 @@
+<!-- 
+Este es el carrito de compras, componente reutilizable en cada página de la web
+-->
 <div class="cart__block">
     <div class="cart__header">
         <h2 class="h4">Tu carrito</h2>
@@ -7,16 +10,18 @@
         </button>
     </div>
     <div class="cart__empty" id="cart__empty">
+    <!-- Se muestra unicamente si no hay ningun producto añadido al carrito -->
         <i class="ri-shopping-cart-line h2"></i>
         <h3>Tu carrito está vacío</h3>
         <p class="body">Agrega productos de nuestra tienda para continuar.</p>
         <a class="btn btn--green" href="shop.html" title="">Ver Productos</a>
     </div>
     <ul class="cart__full" id="cart__full">
+    <!-- Lista de productos añadidos al carrito -->
     </ul>
     <div class="cart__checkout" id="cart__checkout">
         <div class="cart__total">
-            <p class="link">Total</p>
+            <p>Total</p>
             <h4 id="cart__price"></h4>
         </div>
         <a href="checkout.html" class="btn--green--alter">Continuar</a>
