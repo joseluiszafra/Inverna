@@ -62,10 +62,10 @@ button:hover {
 /*Style*/
 :root {
     /*Colors*/
-    --color-light: #fffbe8;
-    --color-yellow: #f5f2d6; /* Color secundario de la marca */
-    --color-green: #185a41;
     --color-primary: #063b29; /* Color principal de la marca */
+    --color-light: #fffbe8; /* Color secundario de la marca */
+    --color-green: #185a41;
+    --color-yellow: #f5f2d6;
 
     /*Fonts*/
     --text-xxxl: normal normal 500 normal clamp(4em, 5vw, 4.5em) normal, "Playfair Display", serif;
